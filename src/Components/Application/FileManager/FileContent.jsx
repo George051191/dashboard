@@ -5,6 +5,8 @@ import errorImg from '../../../assets/images/search-not-found.png';
 import { toast } from 'react-toastify';
 import { H4, H6, LI, P, UL, Image } from '../../../AbstractElements';
 import { CardBody, CardHeader, Form, Input, Media } from 'reactstrap';
+import ProductFeatures from '../Ecommerce/Products/ProductFeatures';
+import ProductGrid from '../Ecommerce/Products/ProductGrid';
 import { FileApi } from '../../../api';
 
 const FileContent = () => {
@@ -100,26 +102,15 @@ const FileContent = () => {
       </CardHeader>
       {filelist.length ? (
         <CardBody className='file-manager'>
-          <H4 attrH4={{ className: 'mb-3' }}>All Files</H4> <H6>Recently Opened Files</H6>
-          <UL attrUL={{ className: 'simple-list files' }}> {filelist}</UL>
-          <H6 attrH6={{ className: 'mt-4' }}>Folders</H6>
-          <UL attrUL={{ className: 'simple-list folder' }}>
-            {myfile.map((item) => {
-              return (
-                <LI attrLI={{ className: 'folder-box' }} key={item.id}>
-                  <Media>
-                    <i className={item.folderclass}></i>
-                    <Media body className=' ms-3'>
-                      <H6 attrH6={{ className: 'mb-0' }}>{item.title}</H6>
-                      <P>{item.foldersize}</P>
-                    </Media>
-                  </Media>
-                </LI>
-              );
-            })}
-          </UL>
-          <H6 attrH6={{ className: 'mt-4' }}>Files</H6>
-          <UL attrUL={{ className: 'simple-list files' }}>{filelist} </UL>
+          <H4 attrH4={{ className: 'mb-3' }}>Trainers</H4> <H6>Recently Opened Files</H6>
+
+          <div className="product-grid">
+
+            <ProductGrid />
+          </div>
+
+
+
         </CardBody>
       ) : (
         <Image attrImage={{ className: 'img-fluid m-auto', src: errorImg, alt: '' }} />

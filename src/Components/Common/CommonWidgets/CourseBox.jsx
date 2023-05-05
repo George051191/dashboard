@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardBody } from 'reactstrap';
 import { H4 } from '../../../AbstractElements';
-
+import DropdownCommon from '../Dropdown';
 import SvgIcon from '../Component/SvgIcon';
 import SquareGroupUi from '../../Dashboard/OnlineCourse/SquareGroupUi';
 
@@ -17,12 +17,7 @@ const CourseBox = ({ data, mainClass }) => {
           <div>
             <H4 attrH4={{ className: 'mb-0' }}>{data.course}</H4>
             <span className='f-light'>{data.title}</span>
-            <Link className='btn btn-light f-light' to={`${process.env.PUBLIC_URL}/learning/learning-list-view`}>
-              {data.link}
-              <span className='ms-2'>
-                <SvgIcon className='fill-icon f-light' iconId='arrowright' />
-              </span>
-            </Link>
+            {/*    <DropdownCommon options={[1, 2, 3]} /> */}
           </div>
         </div>
       </CardBody>

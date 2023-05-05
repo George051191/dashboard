@@ -7,13 +7,13 @@ import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/theme-monokai';
 import 'ace-builds/src-noconflict/ext-language_tools';
 
-const JavascriptMode = () => {
+const JavascriptMode = ({ title }) => {
     return (
         <Fragment>
             <Col xl="6">
                 <Card>
                     <CardHeader>
-                        <H5>Javascript Mode</H5>
+                        <H5>{title}</H5>
                     </CardHeader>
                     <CardBody>
                         <AceEditor

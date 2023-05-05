@@ -15,18 +15,7 @@ const Breadcrumbs = (props) => {
             <Col xs='6'>
               <H3>{props.mainTitle}</H3>
             </Col>
-            <Col xs='6'>
-              <ol className='breadcrumb'>
-                <li className='breadcrumb-item'>
-                  <Link to={`${process.env.PUBLIC_URL}/dashboard/default/${layoutURL}`}>
-                    <SvgIcon iconId='stroke-home' />
-                  </Link>
-                </li>
-                <li className='breadcrumb-item'>{props.parent}</li>
-                {props.subParent ? <li className='breadcrumb-item'>{props.subParent}</li> : ''}
-                <li className='breadcrumb-item active'>{props.title}</li>
-              </ol>
-            </Col>
+
           </Row>
         </div>
       </Container>

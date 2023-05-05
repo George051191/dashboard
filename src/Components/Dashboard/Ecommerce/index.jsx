@@ -3,16 +3,16 @@ import { Container, Row } from 'reactstrap';
 import { Breadcrumbs } from '../../../AbstractElements';
 import LeftGrid from './LeftGrid';
 import RightGrid from './RightGrid';
+import BaseInput from '../../Forms/FormControl/BaseInput';
+import HtmlControlClass from '../../Forms/FormControl/BaseInput/HtmlControl';
 
 const Ecommerce = () => {
   return (
     <Fragment>
-      <Breadcrumbs mainTitle='E-Commerce Dashboard' parent='Dashboard' title='E-Commerce' />
+      <Breadcrumbs parent='Apps' title='File Manager' mainTitle='Настройки' />
       <Container fluid={true}>
-        <Row className='size-column'>
-          <LeftGrid />
-          <RightGrid />
-        </Row>
+
+        <BaseInput />
       </Container>
     </Fragment>
   );

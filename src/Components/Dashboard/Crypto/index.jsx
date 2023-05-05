@@ -4,17 +4,16 @@ import { Breadcrumbs } from '../../../AbstractElements';
 import LeftGrid from './LeftGrid';
 import MainGrid from './MainGrid';
 import RightGrid from './RightGrid';
-
+import TooltipForm from '../../Forms/FormControl/TooltipForm';
+import BasicInputCard1 from '../../Forms/FormControl/InputGroups/BasicInputCard1';
+import { Col, Card, CardBody, FormGroup, Label, Input, InputGroup, InputGroupText } from 'reactstrap';
+import { toast } from 'react-toastify';
 const Crypto = () => {
   return (
     <Fragment>
-      <Breadcrumbs mainTitle='Crypto' parent='Dashboard' title='Crypto' />
+      <Breadcrumbs parent='Apps' title='File Manager' mainTitle='Генерация' />
       <Container fluid={true}>
-        <Row>
-          <LeftGrid />
-          <MainGrid />
-          <RightGrid />
-        </Row>
+        <BasicInputCard1 />
       </Container>
     </Fragment>
   );

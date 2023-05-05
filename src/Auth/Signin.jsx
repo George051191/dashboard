@@ -3,6 +3,7 @@ import { Container, Row, Col, TabContent, TabPane } from 'reactstrap';
 import NavAuth from './Nav';
 import LoginTab from './Tabs/LoginTab';
 import AuthTab from './Tabs/AuthTab';
+import LoginOne from '../Components/Pages/Auth/LoginOne';
 
 const Logins = () => {
   const [selected, setSelected] = useState('simpleLogin');
@@ -17,14 +18,12 @@ const Logins = () => {
         <Col xs='12'>
           <div className='login-card'>
             <div className='login-main login-tab'>
-              <NavAuth callbackNav={callbackNav} selected={selected} />
+
               <TabContent activeTab={selected} className='content-login'>
-                <TabPane className='fade show' tabId={selected === 'simpleLogin' ? 'simpleLogin' : 'jwt'}>
-                  <LoginTab selected={selected} />
-                </TabPane>
-                <TabPane className='fade show' tabId='auth0'>
-                  <AuthTab />
-                </TabPane>
+
+                <LoginTab selected={selected} />
+
+
               </TabContent>
             </div>
           </div>
@@ -35,3 +34,4 @@ const Logins = () => {
 };
 
 export default Logins;
+
