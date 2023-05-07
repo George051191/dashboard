@@ -34,7 +34,7 @@ const LoginTab = ({ selected }) => {
     setName('Emay Walter');
     if (password !== '') {
       localStorage.setItem('login', JSON.stringify(true));
-      history(`${process.env.PUBLIC_URL}/pages/sample-page/${layoutURL}`);
+      history(`${process.env.PUBLIC_URL}/dashboard/default/${layoutURL}`);
     }
   };
   ///// вопрос что для регистрации jwt или логин !!!!
@@ -52,7 +52,7 @@ const LoginTab = ({ selected }) => {
         setValue(man);
         setName('Emay Walter');
         localStorage.setItem('token', Jwt_token);
-        window.location.href = `${process.env.PUBLIC_URL}/pages/sample-page/${layoutURL}`;
+        window.location.href = `${process.env.PUBLIC_URL}/dashboard/default/${layoutURL}`;
         return user;
       });
   };
@@ -61,10 +61,10 @@ const LoginTab = ({ selected }) => {
     <Fragment>
       <Form className='theme-form'>
         <H4>{selected === 'simpleLogin' ? 'Sign In With Simple Login' : 'Sign In With Jwt'}</H4>
-        <P>{'Enter your email & password to login'}</P>
+        <P>{'Введите ваш токен доступа'}</P>
 
         <FormGroup className='position-relative'>
-          <Label className='col-form-label'>{Password}</Label>
+          <Label className='col-form-label'>{'Токен'}</Label>
           <div className='position-relative'>
             <Input className='form-control' type={togglePassword ? 'text' : 'password'} onChange={(e) => setPassword(e.target.value)} defaultValue={'test123'} required='' />
             <div className='show-hide' onClick={() => setTogglePassword(!togglePassword)}>
@@ -76,7 +76,7 @@ const LoginTab = ({ selected }) => {
 
 
 
-          <Btn attrBtn={{ color: 'primary', className: 'd-block w-100 mt-2', disabled: loading ? loading : loading, onClick: (e) => loginAuth(e) }}>{loading ? 'LOADING...' : SignIn}</Btn>
+          <Btn attrBtn={{ color: 'primary', className: 'd-block w-100 mt-2', disabled: loading ? loading : loading, onClick: (e) => loginAuth(e) }}>{loading ? 'LOADING...' : 'Войти'}</Btn>
 
 
 

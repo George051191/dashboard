@@ -1,30 +1,24 @@
 import React, { Fragment } from 'react';
 import { Container, Row } from 'reactstrap';
 import { Breadcrumbs } from '../../../AbstractElements';
-
+import WidgetsGrid from '../Ecommerce/WidgetsGrid';
+import WidgetsWrapper from '../Default/WidgetsWraper'
 import OverallBalance from './OverallBalance';
 import CourseBox from '../../Common/CommonWidgets/CourseBox';
 import { Col } from 'react-bootstrap';
-
+import Widgets2 from '../../Common/CommonWidgets/Widgets2';
 const Dashboard = () => {
-  const data = {
-    title: 'Количество боев за сегодня',
-    course: '51',
-    icon: 'course-2',
-    link: 'За период',
-    color: 'warning',
-  }
+
   return (
     <Fragment>
-      <Breadcrumbs mainTitle='Статистика' parent='Dashboard' title='Статистика' />
+      <Breadcrumbs mainTitle='Default' parent='Dashboard' title='Default' />
       <Container fluid={true}>
         <Row className='widget-grid'>
 
+
           <OverallBalance />
-          <Col sm='6' xl='3' lg='6' className='box-col-6'>
-            <CourseBox data={data} />
-          </Col>
-          {/*    <TotalUserAndFollower /> */}
+          <WidgetsWrapper />
+
         </Row>
       </Container>
     </Fragment>

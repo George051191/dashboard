@@ -34,7 +34,7 @@ const Leftbar = () => {
     if (width <= 991) {
       document.querySelector('.page-header').className = 'page-header';
       document.querySelector('.sidebar-wrapper').className = 'sidebar-wrapper ';
-      document.querySelector('.bg-overlay').classList.add('active');
+      /* document.querySelector('.bg-overlay').classList.add('active'); */
     } else {
       if (toggle) {
         setSidebartoggle(!toggle);

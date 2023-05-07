@@ -11,7 +11,7 @@ const FileManagerContain = () => {
       <Container fluid={true}>
         <Row>
 
-          <Col xl='9' md='12' className='box-col-9'>
+          <Col xl='9' md='12' className=' w-100 p-0 box-col-9'>
             <div className='file-content'>
               <Card>
                 <FileContent />

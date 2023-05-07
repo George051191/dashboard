@@ -21,18 +21,9 @@ const CustomStylesClass = () => {
   return (
     <Fragment>
       <Card>
-        <CardHeader>
-          <H5>{CustomStyles}</H5>
-          <span>
-            For custom Bootstrap form validation messages, you’ll need to add the <code className='text-danger'>novalidate</code> boolean attribute to your <code className='text-danger'>&lt;form&gt;</code>. This disables the browser default feedback tooltips, but still provides access to the form validation APIs in JavaScript. Try to submit the form below; our JavaScript will intercept the submit
-            button and relay feedback to you.
-          </span>
-          <span>
-            When attempting to submit, you’ll see the <code className='text-danger'>:invalid </code> and <code className='text-danger'>:valid </code> styles applied to your form controls.
-          </span>
-        </CardHeader>
+
         <CardBody>
-          <Form className='needs-validation' noValidate='' onSubmit={handleSubmit(onSubmit)}>
+          <Form className='needs-validation' >
             <Row>
               <Col md='4 mb-3'>
                 <Label className='form-label' for='validationCustom01'>

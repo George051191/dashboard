@@ -14,14 +14,14 @@ const BaseInput = () => {
   return (
     <Fragment>
 
-      <Container fluid={true}>
-        <Row>
-          <Col sm='12'>
-            <BasicFormControlClass />
 
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col sm='12'>
+          <BasicFormControlClass />
+
+        </Col>
+      </Row>
+
     </Fragment>
   );
 };

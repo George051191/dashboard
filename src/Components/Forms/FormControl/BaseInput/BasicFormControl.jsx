@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Row, Col, Card, CardBody, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Row, Col, Card, CardBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import { BasicFormControl, EmailAddress, ExampleMultipleSelect, ExampleSelect, ExampleTextarea, Password } from '../../../../Constant';
 import HeaderCard from '../../../Common/Component/HeaderCard';
 import FooterCard1 from '../Common/FooterCard1';
@@ -10,80 +10,66 @@ import { toast } from 'react-toastify';
 const BasicFormControlClass = () => {
     return (
         <Fragment>
-            <Card>
-                <HeaderCard title={'Настройки приложения'} />
-                <Form className="form theme-form">
+
+
+            <Form className="col">
+                <Card className='p-20'>
                     <CardBody>
                         <Row>
-                            <Col>
+                            <Col md='4 mb-3'>
+
                                 <FormGroup>
                                     <Label htmlFor="exampleFormControlInput1">{'Ссылка на правила игры'}</Label>
                                     <Input className="form-control" type="text" placeholder="id" />
                                 </FormGroup>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
                                 <FormGroup>
                                     <Label htmlFor="exampleFormControlInput1">{'Ссылка на инструкцию'}</Label>
                                     <Input className="form-control" type="text" placeholder="id" />
                                 </FormGroup>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
                                 <FormGroup>
                                     <Label htmlFor="exampleFormControlInput1">{'Google ID WEB приложения'}</Label>
                                     <Input className="form-control" type="text" placeholder="id" />
                                 </FormGroup>
+                                <FormGroup>
+                                    <Label >{'Дополнительный ключ авторизации'}</Label>
+                                    <div class="input-group mb-3">
+
+
+                                        <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                        {/*  <button >hhhhh</button> */}
+                                        <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: () => toast.success('Идет создание ключа') }} >{'Создать'}</Btn>
+
+                                    </div>
+
+
+                                </FormGroup>
+
                             </Col>
-                        </Row>
-                        <Row>
-                            <Col>
+                            <Col md='4 mb-3'>
                                 <FormGroup>
                                     <Label htmlFor="exampleFormControlInput1">{'SMTP логин'}</Label>
                                     <Input className="form-control" type="text" placeholder="examplу" />
                                 </FormGroup>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
                                 <FormGroup>
-                                    <Label className="col-sm-3 col-form-label">{'SMTP пароль'}</Label>
-                                    <Col sm="9">
-                                        <Input className="form-control" type="password" placeholder="****" />
-                                    </Col>
+                                    <Label >{'SMTP пароль'}</Label>
+
+                                    <Input className="form-control" type="password" placeholder="****" />
+
                                 </FormGroup>
-                            </Col>
-                        </Row>
-
-
-
-
-
-
-                        <Row>
-                            <Col>
                                 <FormGroup>
                                     <Label htmlFor="exampleFormControlInput1">{'SMTP домен'}</Label>
                                     <Input className="form-control" type="text" placeholder="example@com" />
                                 </FormGroup>
                             </Col>
-                        </Row>
-                        <Row>
-                            <Col>
+                            <Col md='4 mb-3'>
                                 <FormGroup>
-                                    <Label className="col-sm-3 col-form-label">{'Дополнительный ключ авторизации'}</Label>
-
-                                    <Input className="form-control" type="password" placeholder="****" />
-                                    <Btn onClick={() => toast.success('Идет генерация')} attrBtn={{ color: "primary", className: "m-r-15", type: "click", onClick: () => toast.success('Идет генерация') }} >{'Генерация'}</Btn>
-
-
+                                    <Label>{'Время обновления логов Loguru'}</Label>
+                                    <Input type="number" className="form-control" placeholder="3" />
                                 </FormGroup>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
+                                <FormGroup>
+                                    <Label>{'Версия приложения'}</Label>
+                                    <Input type="number" className="form-control" placeholder="2.13" />
+                                </FormGroup>
                                 <FormGroup>
                                     <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
                                     <Input className="form-control" type="number" placeholder="14" />
@@ -94,26 +80,19 @@ const BasicFormControlClass = () => {
                             <JavascriptMode title='Код json ключа Google WEB приложения' />
                             <JavascriptMode title='Код js/метрика и прочее' />
                         </Row>
-                        <Row>
-                            <Col>
-                                <div>
-                                    <Label>{'Время обновления логов Loguru'}</Label>
-                                    <Input type="number" className="form-control" placeholder="3" />
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <div>
-                                    <Label>{'Версия приложения'}</Label>
-                                    <Input type="number" className="form-control" placeholder="2.13" />
-                                </div>
-                            </Col>
-                        </Row>
                     </CardBody>
-                    <FooterCard1 footerClass="text-end" />
-                </Form>
-            </Card>
+
+
+
+
+
+
+
+
+                </Card>
+                <FooterCard1 footerClass="text-end" />
+            </Form>
+
         </Fragment>
     );
 };

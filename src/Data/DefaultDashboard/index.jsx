@@ -1,30 +1,30 @@
 import { Widgets2ChartData, Widgets2ChartData2, Widgets2ChartData2Widgets, Widgets2ChartDataWidgets } from './Chart';
 
 export const WidgetsData = {
-  title: 'Purchase',
+  title: 'Колличество пользователей',
   gros: 50,
-  total: 10_000,
+  total: 123,
   color: 'secondary',
   icon: 'cart',
 };
 export const WidgetsData2 = {
-  title: 'Sales return',
+  title: 'Колличество покемонов',
   gros: 20,
-  total: 7000,
+  total: 35,
   color: 'warning',
   icon: 'return-box',
 };
 export const WidgetsData3 = {
-  title: 'Sales',
+  title: 'Дата последнего создания пользователя',
   gros: 70,
-  total: 4_200,
+  total: '06.05.2023',
   color: 'primary',
   icon: 'tag',
 };
 export const WidgetsData4 = {
-  title: 'Purchase rate',
+  title: 'Дата последнего проведенного боя',
   gros: 70,
-  total: 5700,
+  total: '05.05.2023',
   color: 'success',
   icon: 'rate',
 };

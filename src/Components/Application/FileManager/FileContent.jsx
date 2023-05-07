@@ -8,12 +8,14 @@ import { CardBody, CardHeader, Form, Input, Media } from 'reactstrap';
 import ProductFeatures from '../Ecommerce/Products/ProductFeatures';
 import ProductGrid from '../Ecommerce/Products/ProductGrid';
 import { FileApi } from '../../../api';
+import FilterContext from '../../../_helper/Ecommerce/Filter';
+import ProductContext from '../../../_helper/Ecommerce/Product';
 
 const FileContent = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [myfile, setMyFile] = useState([]);
-
+  const [searchTerm, , setSearchTerm] = useState('');
+  const [myfile = [{ id: 1, status: '', img: '', name: 'trener', price: 20, not: true, discountPrice: 5 }], setMyFile] = useState([]);
+  const { productItem, symbol, setProductItem } = React.useContext(ProductContext);
   useEffect(() => {
     axios.get(FileApi).then((response) => {
       setMyFile(response.data);
@@ -68,45 +70,30 @@ const FileContent = () => {
         icon: 'fa fa-file-text-o txt-info',
       });
       setMyFile(myfiles);
-      toast.success('File Upload Successfully !');
+      setProductItem([...productItem, {
+        id: myfile.length + 1,
+        img: selectedFile.name,
+        size: `${selectedFile.size}`,
+        modify: `${selectedFile.lastModifiedDate}`,
+        icon: 'fa fa-file-text-o txt-info',
+        price: 1500,
+        note: 'Эш'
+      }])
+      toast.success('Аватар загружен!');
     } else {
-      toast.error('Plese Select at least one file !');
+      toast.error('Ошибка при загрузке!');
     }
   };
   return (
     <Fragment>
-      <CardHeader>
-        <Media>
-          <Form className='search-file form-inline'>
-            <div className='mb-0 form-group'>
-              <i className='fa fa-search'></i>
-              <input className='form-control-plaintext' type='text' value={searchTerm} onChange={(e) => handleChange(e)} placeholder='Search...' />
-            </div>
-          </Form>
-          <Media body className='text-end'>
-            <Form className='d-inline-flex'>
-              <div className='btn btn-primary' onClick={getFile}>
-                <PlusSquare />
-                Add New
-              </div>
-              <div style={{ height: '0px', width: '0px', overflow: 'hidden' }}>
-                <Input id='upfile' multiple type='file' onChange={(e) => onFileChange(e)} />
-              </div>
-            </Form>
-            <div className='btn btn-outline-primary ms-2' onClick={onFileUpload}>
-              <Upload />
-              {'Upload'}
-            </div>
-          </Media>
-        </Media>
-      </CardHeader>
+
       {filelist.length ? (
-        <CardBody className='file-manager'>
-          <H4 attrH4={{ className: 'mb-3' }}>Trainers</H4> <H6>Recently Opened Files</H6>
+        <CardBody className='w-100 file-manager'>
+
 
           <div className="product-grid">
 
-            <ProductGrid />
+            <ProductGrid items={myfile} />
           </div>
 
 

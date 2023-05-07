@@ -10,7 +10,7 @@ const Breadcrumbs = (props) => {
   return (
     <Fragment>
       <Container fluid={true}>
-        <div className='page-title'>
+        <div className='page-title mr-0'>
           <Row>
             <Col xs='6'>
               <H3>{props.mainTitle}</H3>

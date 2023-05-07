@@ -22,6 +22,7 @@ const UploadImage = () => {
     return (
         <Fragment>
             <Breadcrumbs mainTitle="Image Upload" parent="Bouns Ui" title="Uploads" />
+            <Btn attrBtn={{ className: "mt-2 ml-50", type: "button", color: 'primary' }} >Upload Image</Btn>
             <Container fluid={true}>
                 <Row>
                     <Col sm="12">
@@ -40,20 +41,20 @@ const UploadImage = () => {
                                     minFileSize={0}
                                     clickable
                                 >
-                                    {
-                                        files.length > 0
+
+                                    {/*      files.length > 0
                                             ? <div className='files-gallery'>
                                                 {files.map((file, index) =>
                                                     <div key={index}>
                                                         <Image attrImage={{ className: 'files-gallery-item', alt: "img", src: `${file.preview.url}` }} />
                                                     </div>
-                                                )}
-                                            </div>
+                                                )} 
+                                          </div>  */}
 
-                                            : <div className="d-flex justify-content-center">
-                                                <Btn attrBtn={{ className: "mt-2", type: "button", color: 'primary' }} >Upload Image</Btn>
-                                            </div>
-                                    }
+
+
+
+
                                 </Files>
                                 {files.length > 0 ?
                                     <div className="d-flex justify-content-center">

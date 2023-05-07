@@ -77,17 +77,20 @@ const Sidebar = (props) => {
   const setNavActive = (item) => {
     MENUITEMS.map((menuItems) => {
       menuItems.Items.filter((Items) => {
+
         if (Items !== item) {
           Items.active = false;
           document.querySelector('.bg-overlay1').classList.remove('active');
         }
         if (Items.children && Items.children.includes(item)) {
+          console.log(Items, item)
           Items.active = true;
           document.querySelector('.sidebar-links').classList.add('active');
         }
         if (Items.children) {
           Items.children.filter((submenuItems) => {
             if (submenuItems.children && submenuItems.children.includes(item)) {
+              console.log(submenuItems, item)
               Items.active = true;
               submenuItems.active = true;
               return true;

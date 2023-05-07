@@ -7,7 +7,7 @@ import axios from 'axios';
 const ProductProvider = (props) => {
     const [productItem, setProductItem] = useState([]);
     const symbol = '$';
-    // const [singleItem, setSingleItems] = useState([]);
+    const [singleItem, setSingleItems] = useState([]);
 
     const fetchProducts = async () => {
         try {
@@ -27,7 +27,7 @@ const ProductProvider = (props) => {
     }, [setProductItem]);
 
     return (
-        <Context.Provider value={{ ...props, productItem, symbol }}>
+        <Context.Provider value={{ ...props, productItem, symbol, setProductItem }}>
             {props.children}
         </Context.Provider>
     );
