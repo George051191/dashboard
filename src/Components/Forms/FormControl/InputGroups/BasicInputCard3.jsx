@@ -4,28 +4,28 @@ import { Btn } from '../../../../AbstractElements';
 import HeaderCard from '../../../Common/Component/HeaderCard';
 import FooterCard from '../Common/FooterCard';
 import { toast } from 'react-toastify';
-import JavascriptMode from '../../../Editor/AceCodeEditor/JavascriptMode';
+import JavascriptMode1 from '../../../Editor/AceCodeEditor/JavascriptMode1'
 const BasicInputCard1 = () => {
     return (
         <Fragment>
             <Card>
-                <CardBody className='w-100'>
+                <CardBody className='w-100' style={{ display: 'flex', flexWrap: 'wrap' }}>
 
-                    <div class="container w-100">
-                        <div class="row">
-                            <div class="col-sm">
-                                <Label>{'Введите имя тренера'}</Label>
-                                <input type="text" class="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
+                    <div class="container m-0" style={{ width: '300px' }}>
+                        <div class="container">
+                            <div class="col-sm  " style={{ width: '260px' }}>
+                                <Label>{'Колличество тренеров'}</Label>
+                                <input type="number" class="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
                             </div>
-                            <div class="col-sm">
-                                <Label>{'Введите стоимость'}</Label>
-                                <input type="text" class="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
+                            <div class="col-sm" style={{ width: '260px' }}>
+                                <Label>{'Колличество покемонов'}</Label>
+                                <input type="number" class="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
                             </div>
-                            <div class="col-sm m-t-25">
-                                <Form className='w-100 '>
+                            <div class="col-sm m-t-25  " style={{ width: '260px' }}>
+                                <Form className='w-100 p-b-10 '>
 
 
-                                    <Btn attrBtn={{ color: "primary", className: "input-group-text w-50", type: "button", onClick: () => toast.success('Генерация...') }} >{'Генерация'}</Btn>
+                                    <Btn attrBtn={{ size: 25, color: "primary", className: "input-group-text w-50", type: "button", onClick: () => toast.success('Генерация...') }} >{'Генерация'}</Btn>
                                 </Form>
 
                             </div>
@@ -33,7 +33,7 @@ const BasicInputCard1 = () => {
                         </div>
 
                     </div>
-                    <JavascriptMode title='Лог-генерация' />
+                    <JavascriptMode1 title='Лог-генерация' />
                 </CardBody>
             </Card>
         </Fragment>

@@ -1,7 +1,7 @@
 import { H5 } from '../../../AbstractElements';
 import { Javadata } from './Data';
 import React, { Fragment } from 'react';
-import { Card, CardBody, CardHeader, Col } from 'reactstrap';
+import { Card, CardBody, CardHeader, Col, Label } from 'reactstrap';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/theme-monokai';
@@ -10,12 +10,11 @@ import 'ace-builds/src-noconflict/ext-language_tools';
 const JavascriptMode = ({ title }) => {
     return (
         <Fragment>
-            <Col xl="6">
-                <Card>
-                    <CardHeader>
-                        <H5>{title}</H5>
-                    </CardHeader>
-                    <CardBody>
+            <Col xl="6" >
+                <Card className='shadow-none'>
+                    <Label>{title}</Label>
+
+                    <CardBody className='p-l-0' style={{ paddingLeft: '0' }}>
                         <AceEditor
                             style={{ marginTop: '0px', width: '663px', height: '428px', marginLeft: '0px' }}
                             mode="javascript"

@@ -1,19 +1,11 @@
-import ProductContext from '../../../../_helper/Ecommerce/Product';
-import CartContext from '../../../../_helper/Ecommerce/Cart';
-import { H4, LI, P, Image, UL, Btn } from '../../../../AbstractElements';
-import FilterContext from '../../../../_helper/Ecommerce/Filter';
-import { getVisibleproducts } from '../../../../Services/Ecommerce.service';
-import ProductModal from './ProductModal';
+
 import React, { Fragment, useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router';
-import { Row, Card, Button, Col } from 'reactstrap';
-import CustomizerContext from '../../../../_helper/Customizer';
+
 import { CardBody, CardHeader, Label, Form, Input } from "reactstrap";
 import Files from 'react-files';
 import ListOfImageDesc from '../../../Gallery/ImageGallery/ListOfImgDesc';
 import { toast } from 'react-toastify';
-import { PlusSquare, Upload } from 'react-feather';
+
 
 const ProductGrid = ({ items }) => {
   const [url, setUrl] = useState('');
@@ -30,7 +22,7 @@ const ProductGrid = ({ items }) => {
     var reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = (_event) => {
-      setImages([...smallImages, reader.result]);
+      setImages([...smallImages, { image: reader.result, name: name, cost: cost }]);
       toast.success('Загрузка...')
     };
   }
@@ -59,34 +51,7 @@ const ProductGrid = ({ items }) => {
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <ListOfImageDesc name={name} cost={cost} smallImages={smallImages} withDesc={true} />
-
-
-
     </Fragment>
 
   )
