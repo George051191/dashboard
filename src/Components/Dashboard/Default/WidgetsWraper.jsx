@@ -7,23 +7,27 @@ import Widgets1 from '../../Common/CommonWidgets/Widgets1';
 const WidgetsWrapper = () => {
   return (
     <>
-      <Col xxl='4' xl='5' lg='5' sm='6' className='box-col-6'>
-        <Row>
-          <Col xl='12'>
+      <Col className='box-col-6 col-sm-12 col-md-6 col-xl-6 col-xxl-4'>
+
+        <div style={{ gap: 10 }} className='m-b-10 d-flex flex-column gap-20 flex-sm-row justify-content-start gap-20 flex-md-row flex-lg-row flex-xl-row flex-xxl-column'>
+          <Col className=' col-md-12 col-xl-12'>
             <Widgets1 data={WidgetsData} />
           </Col>
-          <Col xl='12'>
+
+          <Col className=' col-md-12 col-xl-12'>
             <Widgets1 data={WidgetsData2} />
           </Col>
-        </Row>
-        <Row>
-          <Col xl='12'>
+        </div>
+        <div style={{ gap: 10 }} className='d-flex flex-column gap-20 flex-sm-row justify-content-start gap-20 flex-md-row flex-lg-row flex-xl-row flex-xxl-column'>
+          <Col className=' col-md-12 col-xl-12'>
             <Widgets1 data={WidgetsData3} />
           </Col>
-          <Col xl='12'>
+
+          <Col className=' col-md-12 col-xl-12'>
             <Widgets1 data={WidgetsData4} />
           </Col>
-        </Row>
+        </div>
+
       </Col>
 
 

@@ -14,7 +14,7 @@ const Widgets1 = ({ data }) => {
               <SvgIcon className='half-circle svg-fill' iconId='halfcircle' />
             </div>
           </div>
-          <div>
+          <div style={{ height: '75px' }}>
             <H4>{data.total}</H4>
             <span className='f-light'>{data.title}</span>
           </div>
