@@ -87,14 +87,6 @@ const BasicFormControlClass = () => {
                                     <Input className="form-control" type="number" placeholder="14" />
                                 </FormGroup>
                             </div>
-                            {/*     <div class="col col-md-4 col-4">
-
-
-
-
-                                <div className='w-100'></div>
-                               
-                            </div> */}
 
 
 

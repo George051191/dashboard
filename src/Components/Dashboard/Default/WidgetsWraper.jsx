@@ -7,7 +7,7 @@ import Widgets1 from '../../Common/CommonWidgets/Widgets1';
 const WidgetsWrapper = () => {
   return (
     <>
-      <Col xxl='auto' xl='3' sm='6' className='box-col-6'>
+      <Col xxl='4' xl='5' lg='5' sm='6' className='box-col-6'>
         <Row>
           <Col xl='12'>
             <Widgets1 data={WidgetsData} />

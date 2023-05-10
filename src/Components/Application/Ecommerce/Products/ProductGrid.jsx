@@ -7,7 +7,7 @@ import ListOfImageDesc from '../../../Gallery/ImageGallery/ListOfImgDesc';
 import { toast } from 'react-toastify';
 
 
-const ProductGrid = ({ items }) => {
+const ProductGrid = () => {
   const [name, setName] = useState('')
   const [cost, setCost] = useState()
   const [smallImages, setImages] = useState([])
