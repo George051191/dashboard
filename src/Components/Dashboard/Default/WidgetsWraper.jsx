@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'reactstrap';
 import { WidgetsData, WidgetsData2, WidgetsData3, WidgetsData4 } from '../../../Data/DefaultDashboard';
 import Widgets1 from '../../Common/CommonWidgets/Widgets1';
-import Widgets2 from '../../Common/CommonWidgets/Widgets2';
+
 
 const WidgetsWrapper = () => {
   return (

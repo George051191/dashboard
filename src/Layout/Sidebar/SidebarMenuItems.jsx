@@ -15,10 +15,11 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
 
   const { t } = useTranslation();
   const toggletNavActive = (item) => {
+    console.log(8)
     if (window.innerWidth <= 991) {
       document.querySelector('.page-header').className = 'page-header close_icon';
       document.querySelector('.sidebar-wrapper').className = 'sidebar-wrapper close_icon ';
-      document.querySelector('.mega-menu-container').classList.remove('d-block');
+      /* document.querySelector('.mega-menu-container').classList.remove('d-block'); */
       if (item.type === 'sub') {
         document.querySelector('.page-header').className = 'page-header';
         document.querySelector('.sidebar-wrapper').className = 'sidebar-wrapper';
@@ -72,7 +73,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
                   <SvgIcon className='stroke-icon' iconId={`stroke-${menuItem.icon}`} />
                   <SvgIcon className='fill-icon' iconId={`fill-${menuItem.icon}`} />
                   <span>{t(menuItem.title)}</span>
-                  {menuItem.badge ? <label className={menuItem.badge}>{menuItem.badgetxt}</label> : ''}
+                  {/*    {menuItem.badge ? <label className={menuItem.badge}>{menuItem.badgetxt}</label> : ''} */}
                   <div className='according-menu'>{menuItem.active ? <i className='fa fa-angle-down'></i> : <i className='fa fa-angle-right'></i>}</div>
                 </a>
               ) : (
@@ -80,7 +81,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
               )}
 
               {menuItem.type === 'link' ? (
-                <Link to={menuItem.path + '/' + layoutId} className={`sidebar-link sidebar-title link-nav  ${CurrentPath.includes(menuItem.title.toLowerCase()) ? 'active' : ''}`} onClick={() => toggletNavActive(menuItem)}>
+                <Link to={menuItem.path + '/' + layoutId} className={`sidebar-link sidebar-title link-nav  ${CurrentPath.includes(menuItem.title.toLowerCase()) ? 'active' : ''}`} onClick={(e) => { toggletNavActive(menuItem) }}>
                   <SvgIcon className='stroke-icon' iconId={`stroke-${menuItem.icon}`} />
                   <SvgIcon className='fill-icon' iconId={`fill-${menuItem.icon}`} />
                   <span>{t(menuItem.title)}</span>
@@ -119,7 +120,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
                             to={childrenItem.path + '/' + layoutId}
                             className={`${CurrentPath.includes(childrenItem?.title?.toLowerCase()) ? 'active' : ''}`}
                             // className={`${childrenItem.active ? 'active' : ''}`} bonusui
-                            onClick={() => toggletNavActive(childrenItem)}>
+                            onClick={(e) => { toggletNavActive(childrenItem) }}>
                             {t(childrenItem.title)}
                           </Link>
                         ) : (
@@ -135,7 +136,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
                                     to={childrenSubItem.path + '/' + layoutId}
                                     className={`${CurrentPath.includes(childrenSubItem?.title?.toLowerCase()) ? 'active' : ''}`}
                                     // className={`${childrenSubItem.active ? 'active' : ''}`}
-                                    onClick={() => toggletNavActive(childrenSubItem)}>
+                                    onClick={(e) => { e.preventDefault(); toggletNavActive(childrenSubItem) }}>
                                     {t(childrenSubItem.title)}
                                   </Link>
                                 ) : (

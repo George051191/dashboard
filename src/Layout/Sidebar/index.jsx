@@ -19,12 +19,7 @@ const Sidebar = (props) => {
 
   const handleScroll = () => {
     if (window.scrollY > 400) {
-      // if (
-      //   customizer.settings.sidebar.type.split(' ').pop() ===
-      //   'material-type' ||
-      //   customizer.settings.sidebar.type.split(' ').pop() ===
-      //   'advance-layout'
-      // )
+
       document.querySelector('.sidebar-main').className = 'sidebar-main hovered';
     } else {
       if (document.getElementById('sidebar-main')) document.querySelector('.sidebar-main').className = 'sidebar-main';
@@ -70,14 +65,14 @@ const Sidebar = (props) => {
   };
 
   const activeClass = () => {
-    // document.querySelector('.sidebar-link').classList.add('active');
+    console.log(1)
     document.querySelector('.bg-overlay1').classList.add('active');
   };
 
   const setNavActive = (item) => {
+
     MENUITEMS.map((menuItems) => {
       menuItems.Items.filter((Items) => {
-
         if (Items !== item) {
           Items.active = false;
           document.querySelector('.bg-overlay1').classList.remove('active');

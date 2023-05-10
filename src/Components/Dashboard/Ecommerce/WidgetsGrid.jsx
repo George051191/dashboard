@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'reactstrap';
 import { SmallWidgetsData } from '../../../Data/Ecommerce';
 import SmallWidgets from '../../Common/CommonWidgets/SmallWidgets';
-import TotalBalance from './TotalBalance';
+
 
 const WidgetsGrid = () => {
   return (

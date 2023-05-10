@@ -3,7 +3,7 @@ import { Card, CardBody, Col, Media } from "reactstrap";
 import { IMAGE_GALLERY, PortfolioTitle } from "../../../Constant";
 import HeaderCard from "../../Common/Component/HeaderCard";
 
-const ListOfImageDesc = ({ smallImages, name, cost }) => {
+const ListOfImageDesc = ({ smallImages, callBack, name, cost }) => {
 
 
     return (
@@ -13,10 +13,11 @@ const ListOfImageDesc = ({ smallImages, name, cost }) => {
                     <Card className="m-t-10">
 
                         <CardBody>
-                            <div className="my-gallery row gallery-with-description">
+                            <div className="my-gallery row  gallery-with-description">
                                 {smallImages.map((item, i) => (
-                                    <figure className="col-xl-3 col-sm-6">
+                                    <figure className="col-xl-3 col-sm-6 position-relative">
                                         <a href="#javascript" data-size="1600x950">
+
                                             <Media
                                                 src={smallImages[i].image}
                                                 alt="Gallery"
@@ -24,8 +25,17 @@ const ListOfImageDesc = ({ smallImages, name, cost }) => {
 
                                             />
                                             <div className="caption">
-                                                <h4 >{smallImages[i].name}</h4>
-                                                <p>{smallImages[i].cost}</p>
+                                                <h4 >{smallImages[i].name}
+                                                    <span onClick={() => callBack(smallImages[i].name)} style={{ top: 10, right: 20 }} className="position-absolute  " attrLI={{ className: 'border-0 ' }}>
+                                                        <a className='theme-text' href='#javascript'>
+                                                            <i className='fa fa-trash-o'></i>
+                                                        </a>
+                                                    </span>
+                                                </h4>
+                                                <p>{smallImages[i].cost}
+
+                                                </p>
+
                                             </div>
                                         </a>
                                     </figure>
