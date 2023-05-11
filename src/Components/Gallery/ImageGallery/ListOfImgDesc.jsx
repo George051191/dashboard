@@ -26,7 +26,7 @@ const ListOfImageDesc = ({ smallImages, callBack, name, cost }) => {
                                             />
                                             <div className="caption">
                                                 <h4 >{smallImages[i].name}
-                                                    <span onClick={() => callBack(smallImages[i].name)} style={{ top: 10, right: 20 }} className="position-absolute  " attrLI={{ className: 'border-0 ' }}>
+                                                    <span onClick={() => callBack(smallImages[i].id)} style={{ top: 10, right: 20 }} className="position-absolute  " attrLI={{ className: 'border-0 ' }}>
                                                         <a className='theme-text' href='#javascript'>
                                                             <i className='fa fa-trash-o'></i>
                                                         </a>

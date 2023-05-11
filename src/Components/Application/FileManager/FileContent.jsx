@@ -9,15 +9,6 @@ import ProductGrid from '../Ecommerce/Products/ProductGrid';
 
 const FileContent = () => {
 
-
-
-
-  /// for real data 
-
-
-
-
-
   return (
     <Fragment>
       <CardBody className='w-100 file-manager'>

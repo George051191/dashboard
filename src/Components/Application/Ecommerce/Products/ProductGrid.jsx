@@ -2,12 +2,15 @@
 import React, { Fragment, useContext, useState } from 'react';
 
 import { Label, Form, Input } from "reactstrap";
-
+import GalleryContext from '../../../../_helper/Gallery';
 import ListOfImageDesc from '../../../Gallery/ImageGallery/ListOfImgDesc';
 import { toast } from 'react-toastify';
 
 
 const ProductGrid = () => {
+  //for real data
+  /*   const [smallImages, setSmallImages] = useContext(GalleryContext) */
+
   const [name, setName] = useState('')
   const [cost, setCost] = useState()
   const [smallImages, setImages] = useState([])
@@ -21,14 +24,17 @@ const ProductGrid = () => {
     var reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = (_event) => {
-      setImages([...smallImages, { image: reader.result, name: name, cost: cost }]);
+      let uniqId = Math.floor(Math.random() * 100);
+      /*  setSmallImages([...smallImages, { image: reader.result, name: name, cost: cost }]) */
+      setImages([...smallImages, { id: uniqId, image: reader.result, name: name, cost: cost }]);
       toast.success('Загрузка...')
     };
   }
-  const deleteCard = (itemName) => {
+  const deleteCard = (itemid) => {
     const filteredArray = smallImages.filter((el) => {
-      return el.name !== itemName
+      return el.id !== itemid
     })
+    /*  setSmallImages(filteredArray) */
     setImages(filteredArray)
   }
   return (

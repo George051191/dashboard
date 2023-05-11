@@ -7,7 +7,8 @@ const FooterCard1 = () => {
     return (
         <Fragment>
             <CardFooter className="text-end">
-                <Btn onClick={() => toast.success('Идет генерация')} attrBtn={{ color: "primary", className: "m-r-15 m-b-15", type: "submit" }} >{'Сохранить'}</Btn>
+                <Btn onClick={() => toast.success('Удаление')} attrBtn={{ color: 'danger', className: 'm-r-15 m-b-15', type: 'submit' }}>{'Очистить базу данных'}</Btn>
+                <Btn onClick={() => toast.success('Идет сохранение')} attrBtn={{ color: "primary", className: " m-b-15", type: "submit" }} >{'Сохранить'}</Btn>
 
             </CardFooter>
         </Fragment>

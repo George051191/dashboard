@@ -7,30 +7,23 @@ import { toast } from 'react-toastify';
 const BasicFormControlClass = () => {
     return (
         <Fragment>
-
-
             <Form className="col">
                 <Card className='p-20'>
                     <CardBody>
-
-
-
                         <Row>
                             <div class="col-xs-12 col-md-6 col-xl-4">
-
                                 <FormGroup className="col "  >
                                     <Label htmlFor="exampleFormControlInput1">{'Ссылка на правила игры'}</Label>
-                                    <Input className="form-control" type="text" placeholder="id" />
+                                    <Input className="form-control" type="text" placeholder="https://..." />
                                 </FormGroup>
                                 <FormGroup className="col " >
                                     <Label htmlFor="exampleFormControlInput1">{'Ссылка на инструкцию'}</Label>
-                                    <Input className="form-control" type="text" placeholder="id" />
+                                    <Input className="form-control" type="text" placeholder="https://..." />
                                 </FormGroup>
                                 <FormGroup className="col " >
                                     <Label htmlFor="exampleFormControlInput1">{'Google ID WEB приложения'}</Label>
                                     <Input className="form-control" type="text" placeholder="id" />
                                 </FormGroup>
-
                                 <FormGroup className="col " >
                                     <Label >{'Дополнительный ключ авторизации'}</Label>
                                     <div class="input-group mb-3">
@@ -42,15 +35,13 @@ const BasicFormControlClass = () => {
                                     <Label>{'Время обновления логов Loguru'}</Label>
                                     <Input type="number" className="form-control" placeholder="3" />
                                 </FormGroup>
-
-
                             </div>
 
                             <div class="col-xs-12 col-md-6 col-xl-4">
 
                                 <FormGroup className="col " >
                                     <Label htmlFor="exampleFormControlInput1">{'SMTP логин'}</Label>
-                                    <Input className="form-control" type="text" placeholder="examplу" />
+                                    <Input className="form-control" type="text" placeholder="example@login" />
                                 </FormGroup>
                                 <FormGroup className="col " >
                                     <Label >{'SMTP пароль'}</Label>
@@ -87,29 +78,15 @@ const BasicFormControlClass = () => {
                                     <Input className="form-control" type="number" placeholder="14" />
                                 </FormGroup>
                             </div>
-
-
-
                         </Row>
-
-
                         <Row>
                             <JavascriptMode title='Код json ключа Google WEB приложения' />
                             <JavascriptMode title='Код js/метрика и прочее' />
                         </Row>
                     </CardBody>
-
-
-
-
-
-
-
-
                 </Card>
                 <FooterCard1 footerClass="text-end" />
             </Form >
-
         </Fragment >
     );
 };
