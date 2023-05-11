@@ -45,10 +45,10 @@ const ProductGrid = () => {
             <Label>{'Введите имя тренера'}</Label>
             <input onChange={((e) => setName(e.target.value))} type="text" class="form-control w-100" placeholder="Имя" aria-label="Имя тренера" aria-describedby="basic-addon2" />
           </div>
-          <div class="col-sm">
+          {/*  <div class="col-sm">
             <Label>{'Введите стоимость'}</Label>
             <input onChange={((e) => setCost(e.target.value))} type="text" class="form-control w-100" placeholder="Цена" aria-label="Стоимость аватара" aria-describedby="basic-addon2" />
-          </div>
+          </div> */}
           <div class="col-md m-t-25">
             <Form className='d-inline-flex w-100'>
               <Input id='upfile' multiple type='file' onChange={(e) => readUrl(e)} />

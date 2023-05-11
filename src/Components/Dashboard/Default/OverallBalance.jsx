@@ -8,12 +8,12 @@ import { CurrencyChartData } from '../../../Data/DefaultDashboard/Chart';
 import { LightCardData } from '../../../Data/DefaultDashboard';
 const OverallBalance = () => {
   return (
-    <Col xxl='8' lg='12' className='box-col-12'>
+    <Col xxl='9' lg='12' className='box-col-12'>
       <Card>
         <CardHeader className='card-no-border'>
           <H5>{OverallBalanceTitle}</H5>
         </CardHeader>
-        <CardBody className='pt-0'>
+        <CardBody style={{ paddingBottom: '90px', marginTop: '47px' }} className='pt-0'>
           <Row className='m-0 overall-card'>
             <Col xl='9' md='12' sm='7' className='p-0'>
               <div className='chart-right'>
@@ -23,11 +23,11 @@ const OverallBalance = () => {
                       <UL attrUL={{ horizontal: true, className: 'd-flex balance-data' }}>
                         <LI>
                           <span className='circle bg-warning'> </span>
-                          <span className='f-light ms-1'>{Earning}</span>
+                          <span className='f-light ms-1'>{'Запросы'}</span>
                         </LI>
                         <LI>
                           <span className='circle bg-primary'> </span>
-                          <span className='f-light ms-1'>{Expense}</span>
+                          <span className='f-light ms-1'>{'Покупки'}</span>
                         </LI>
                       </UL>
                       <div className='current-sale-container'>

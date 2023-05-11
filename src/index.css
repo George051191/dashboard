@@ -89355,6 +89355,12 @@ rect {
     visibility: hidden;
 }
 
+@media screen and (max-width:1120px) {
+    .custom-class {
+        display: none;
+    }
+}
+
 @-webkit-keyframes taskHighlighter {
     0% {
         background: rgba(68, 102, 242, 0.5);

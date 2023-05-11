@@ -6,7 +6,7 @@ const Notificationbar = () => {
   const [notificationDropDown, setNotificationDropDown] = useState(false);
 
   return (
-    <li className='onhover-dropdown'>
+    <li className='onhover-dropdown m-r-15'>
       <div className='notification-box' onClick={() => setNotificationDropDown(!notificationDropDown)}>
         <SvgIcon iconId='notification' />
         <span className='badge rounded-pill badge-secondary'>4</span>

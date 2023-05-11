@@ -5,7 +5,7 @@ import SvgIcon from '../Component/SvgIcon';
 
 const Widgets1 = ({ data }) => {
   return (
-    <Card className='widget-1'>
+    <Card className='widget-1 m-b-0'>
       <CardBody>
         <div className='widget-content'>
           <div className={`widget-round ${data.color}`}>

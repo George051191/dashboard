@@ -756,7 +756,7 @@ export const CurrencyChartData = {
       },
     },
 
-    colors: [primary, '#AAAFCB'],
+    colors: [primary, '#ffaa05'],
     yaxis: {
       tickAmount: 3,
       labels: {

@@ -1,15 +1,12 @@
 import React, { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Language from './Language';
-import Searchbar from './Searchbar';
+
 import Notificationbar from './Notificationbar';
-import MoonLight from './MoonLight';
-import CartHeader from './CartHeader';
-import BookmarkHeader from './BookmarkHeader';
-import UserHeader from './UserHeader';
+
 import { UL } from '../../../AbstractElements';
 import { Col } from 'reactstrap';
 import { Btn } from '../../../AbstractElements';
+import { toast } from 'react-toastify';
 const RightHeader = () => {
   const history = useNavigate()
   const Logout = () => {
@@ -22,13 +19,21 @@ const RightHeader = () => {
   };
   return (
     <Fragment>
-      <Col xxl='7' xl='6' md='7' className='nav-right pull-right right-header col-8 p-0 ms-auto'>
+      <Col xxl='7' xl='7' md='7' className='nav-right pull-right right-header col-8 p-0 ms-auto col-md-8 col-xl-7 col-xxl-7'>
         {/* <Col md="8"> */}
         <UL attrUL={{ className: 'simple-list nav-menus flex-row' }}>
 
           <Notificationbar />
-          <UserHeader />
-          <Btn attrBtn={{ color: "secondary", className: "m-r-15 m-l-15", type: "button", onClick: Logout }} >{'Выйти'}</Btn>
+          <div style={{ flexBasis: 'fit-content' }} className='col-9 d-flex justify-content-end' >
+
+            <Btn onClick={() => toast.success('Удаление')} attrBtn={{ color: 'danger', className: 'm-r-15 ', type: 'submit' }}>{'Очистить базу данных'}</Btn>
+
+            <Btn onClick={() => toast.success('Идет сохранение')} attrBtn={{ color: "primary", className: "m-r-15 ", type: "submit" }} >{'Сохранить'}</Btn>
+            <Btn attrBtn={{ color: "secondary", className: " ", type: "button", onClick: Logout }} >{'Выйти'}</Btn>
+
+
+          </div>
+
         </UL>
         {/* </Col> */}
       </Col>

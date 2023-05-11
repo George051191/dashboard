@@ -82,24 +82,20 @@ export const Widgets2Data2Widgets = {
 
 export const LightCardData = [
   {
-    title: 'Income',
+    title: 'Количество запросов в Kafka',
     icon: 'income',
-    price: '$22,678',
+    price: '10',
     gros: '+$456',
     color: 'success',
   },
   {
-    title: 'Expense',
+    title: 'Последняя покупка в магазине',
     icon: 'expense',
-    price: '$12,057',
+    price: '05.05.2023',
     gros: '+$256',
     color: 'danger',
   },
-  {
-    title: 'Cashback',
-    icon: 'doller-return',
-    price: '$8,475',
-  },
+
 ];
 export const LightCardData2 = [
   {
