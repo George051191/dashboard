@@ -10,9 +10,9 @@ import 'ace-builds/src-noconflict/ext-language_tools';
 const JavascriptMode1 = ({ title }) => {
     return (
         <Fragment>
-            <Col className='col-1 w-100 p-l-20' style={{ maxWidth: '700px' }}>
-                <Card className='shadow-none w-100'>
-                    <Label>{'Лог генерация'}</Label>
+            <Col className='col-1 w-100 p-l-12' >
+                <Card style={{ paddingLeft: '12px' }} className='shadow-none w-100 p-l-12'>
+                    <Label>{title}</Label>
 
                     <AceEditor
                         style={{ marginTop: '0px', width: '300px', height: '428px', marginLeft: '0px' }}

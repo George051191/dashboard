@@ -5,29 +5,29 @@ import { Earning, Expense, OverallBalanceTitle } from '../../../Constant';
 import LightCard from './LitghtCard';
 import ReactApexChart from 'react-apexcharts';
 import { CurrencyChartData } from '../../../Data/DefaultDashboard/Chart';
-import { LightCardData } from '../../../Data/DefaultDashboard';
+
 const OverallBalance = () => {
   return (
     <Col xxl='9' lg='12' className='box-col-12'>
       <Card>
         <CardHeader className='card-no-border'>
-          <H5>{OverallBalanceTitle}</H5>
+          <H5>{'График'}</H5>
         </CardHeader>
         <CardBody style={{ paddingBottom: '90px', marginTop: '47px' }} className='pt-0'>
           <Row className='m-0 overall-card'>
-            <Col xl='9' md='12' sm='7' className='p-0'>
+            <Col xl='9' md='12' sm='7' className='p-0 w-100'>
               <div className='chart-right'>
                 <Row>
                   <Col xl='12' className='col-xl-12'>
                     <CardBody className='p-0'>
-                      <UL attrUL={{ horizontal: true, className: 'd-flex balance-data' }}>
+                      <UL attrUL={{ horizontal: true, className: 'd-flex balance-data top-99' }} style={{ top: '-99px' }}>
                         <LI>
                           <span className='circle bg-warning'> </span>
-                          <span className='f-light ms-1'>{'Запросы'}</span>
+                          <span className='f-light ms-1'>{'Запросы Kafka'}</span>
                         </LI>
                         <LI>
                           <span className='circle bg-primary'> </span>
-                          <span className='f-light ms-1'>{'Покупки'}</span>
+                          <span className='f-light ms-1'>{'Покупки в магазине'}</span>
                         </LI>
                       </UL>
                       <div className='current-sale-container'>
@@ -38,7 +38,7 @@ const OverallBalance = () => {
                 </Row>
               </div>
             </Col>
-            <LightCard LightCardData={LightCardData} />
+            {/*    <LightCard LightCardData={LightCardData} /> */}
           </Row>
         </CardBody>
       </Card>

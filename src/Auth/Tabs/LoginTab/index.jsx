@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect, useContext } from 'react';
 import { Form, FormGroup, Input, Label } from 'reactstrap';
 import { Btn, H4, P } from '../../../AbstractElements';
-import { EmailAddress, ForgotPassword, LoginWithJWT, Password, RememberPassword, SignIn } from '../../../Constant';
+
 
 import { useNavigate } from 'react-router-dom';
 import { Jwt_token } from '../../../Config/Config';
@@ -9,7 +9,7 @@ import man from '../../../assets/images/dashboard/profile.png';
 import { handleResponse } from '../../../Services/fack.backend';
 
 import CustomizerContext from '../../../_helper/Customizer';
-import OtherWay from './OtherWay';
+
 
 const LoginTab = ({ selected }) => {
   const [email, setEmail] = useState('');
@@ -34,7 +34,7 @@ const LoginTab = ({ selected }) => {
     setName('Emay Walter');
     if (password !== '') {
       localStorage.setItem('login', JSON.stringify(true));
-      history(`${process.env.PUBLIC_URL}/dashboard/default/${layoutURL}`);
+      history(`${process.env.PUBLIC_URL}/dashboard/stata/${layoutURL}`);
     }
   };
   ///// вопрос что для регистрации jwt или логин !!!!
@@ -52,7 +52,7 @@ const LoginTab = ({ selected }) => {
         setValue(man);
         setName('Emay Walter');
         localStorage.setItem('token', Jwt_token);
-        window.location.href = `${process.env.PUBLIC_URL}/dashboard/default/${layoutURL}`;
+        window.location.href = `${process.env.PUBLIC_URL}/dashboard/stata/${layoutURL}`;
         return user;
       });
   };

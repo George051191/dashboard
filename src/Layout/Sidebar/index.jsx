@@ -25,50 +25,6 @@ const Sidebar = (props) => {
       if (document.getElementById('sidebar-main')) document.querySelector('.sidebar-main').className = 'sidebar-main';
     }
   };
-
-  useEffect(() => {
-    document.querySelector('.left-arrow').classList.add('d-none');
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    const currentUrl = window.location.pathname;
-    MENUITEMS.map((items) => {
-      items.Items.filter((Items) => {
-        if (Items.path === currentUrl) setNavActive(Items);
-        if (!Items.children) return false;
-        Items.children.filter((subItems) => {
-          if (subItems.path === currentUrl) setNavActive(subItems);
-          if (!subItems.children) return false;
-          subItems.children.filter((subSubItems) => {
-            if (subSubItems.path === currentUrl) {
-              setNavActive(subSubItems);
-              return true;
-            } else {
-              return false;
-            }
-          });
-          return subItems;
-        });
-        return Items;
-      });
-      return items;
-    });
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [layout]);
-
-  const handleResize = () => {
-    setWidth(window.innerWidth - 500);
-  };
-
-  const activeClass = () => {
-    console.log(1)
-    document.querySelector('.bg-overlay1').classList.add('active');
-  };
-
   const setNavActive = (item) => {
 
     MENUITEMS.map((menuItems) => {
@@ -101,6 +57,55 @@ const Sidebar = (props) => {
     item.active = !item.active;
     setMainMenu({ mainmenu: MENUITEMS });
   };
+
+  useEffect(() => {
+    document.querySelector('.left-arrow').classList.add('d-none');
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    const currentUrl = window.location.pathname;
+
+    MENUITEMS.map((items) => {
+      items.Items.filter((Items) => {
+
+        if (Items.path === currentUrl) setNavActive(Items);
+        if (!Items.children) return false;
+        Items.children.filter((subItems) => {
+
+          if (subItems.path === currentUrl) setNavActive(subItems);
+          if (!subItems.children) return false;
+          subItems.children.filter((subSubItems) => {
+            if (subSubItems.path === currentUrl) {
+              console.Consolelog(123456789)
+              setNavActive(subSubItems);
+              return true;
+            } else {
+              return false;
+            }
+          });
+          return subItems;
+        });
+        return Items;
+      });
+      return items;
+    });
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [layout]);
+
+  const handleResize = () => {
+    setWidth(window.innerWidth - 500);
+  };
+
+  const activeClass = () => {
+    console.log(1)
+    document.querySelector('.bg-overlay1').classList.add('active');
+  };
+
+
 
   const closeOverlay = () => {
     document.querySelector('.bg-overlay1').classList.remove('active');

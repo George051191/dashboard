@@ -1,58 +1,81 @@
 
-import React, { Fragment, useContext, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
-import { Label, Form, Input } from "reactstrap";
-import GalleryContext from '../../../../_helper/Gallery';
+import { Label, Form, Input, CardBody } from "reactstrap";
+import { Btn } from '../../../../AbstractElements';
+import Files from 'react-files';
 import ListOfImageDesc from '../../../Gallery/ImageGallery/ListOfImgDesc';
 import { toast } from 'react-toastify';
 
 
-const ProductGrid = () => {
+const ProductGrid = ({ title, isNeed }) => {
   //for real data
   /*   const [smallImages, setSmallImages] = useContext(GalleryContext) */
 
   const [name, setName] = useState('')
   const [cost, setCost] = useState()
   const [smallImages, setImages] = useState([])
-  const readUrl = (event) => {
-    if (event.target.files.length === 0) return;
-    var mimeType = event.target.files[0].type;
+  const [files, setFile] = useState();
+  const onFilesChange = (files) => {
+    setFile(files)
+  }
+  const readUrl = () => {
+    if (!files) return;
+    var mimeType = files.type;
 
-    if (mimeType.match(/image\/*/) == null) {
-      return;
-    }
+    /*  */
     var reader = new FileReader();
-    reader.readAsDataURL(event.target.files[0]);
+    reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
-      let uniqId = Math.floor(Math.random() * 100);
-      /*  setSmallImages([...smallImages, { image: reader.result, name: name, cost: cost }]) */
+      let uniqId = Math.floor(Math.random() * 100) + Math.floor(Math.random());
+
+
       setImages([...smallImages, { id: uniqId, image: reader.result, name: name, cost: cost }]);
       toast.success('Загрузка...')
     };
   }
   const deleteCard = (itemid) => {
+
     const filteredArray = smallImages.filter((el) => {
+
       return el.id !== itemid
     })
     /*  setSmallImages(filteredArray) */
+    console.log(filteredArray)
     setImages(filteredArray)
   }
+
+  React.useEffect(() => {
+    readUrl()
+    console.log(files)
+  }, [files])
   return (
     <Fragment>
-      <div class="container-xl w-100 m-l-0 m-r-0">
-        <div class="row display-custom-user">
-          <div class="col-sm">
-            <Label>{'Введите имя тренера'}</Label>
-            <input onChange={((e) => setName(e.target.value))} type="text" class="form-control w-100" placeholder="Имя" aria-label="Имя тренера" aria-describedby="basic-addon2" />
-          </div>
-          {/*  <div class="col-sm">
-            <Label>{'Введите стоимость'}</Label>
-            <input onChange={((e) => setCost(e.target.value))} type="text" class="form-control w-100" placeholder="Цена" aria-label="Стоимость аватара" aria-describedby="basic-addon2" />
-          </div> */}
-          <div class="col-md m-t-25">
-            <Form className='d-inline-flex w-100'>
-              <Input id='upfile' multiple type='file' onChange={(e) => readUrl(e)} />
-            </Form>
+      <div className="container-xl w-100 m-l-0 m-r-0">
+        <div className="row w-100 display-custom-user">
+          {isNeed && <div className="col-6">
+            <Label>{title}</Label>
+            <input onChange={((e) => setName(e.target.value))} type="number" className="form-control w-100" placeholder="1500" aria-label="Имя тренера" aria-describedby="basic-addon2" />
+          </div>}
+
+          <div className="col-4 ">
+            <CardBody className='fileUploader'>
+
+              {/*  <Input style={{}} id='upfile' multiple type='file' onChange={(e) => readUrl(e)} /> */}
+              <Files
+                className='files-dropzone fileContainer'
+                onChange={onFilesChange}
+
+
+                multiple={false}
+                maxFileSize={10000000}
+                minFileSize={0}
+                clickable
+              >
+                <Btn attrBtn={{ className: "mt-2 ml-50", type: "button", color: 'primary' }} >Загрузить</Btn>
+              </Files>
+
+            </CardBody>
           </div>
         </div>
       </div>

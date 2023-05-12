@@ -22,7 +22,7 @@ const UploadImage = () => {
     return (
         <Fragment>
             <Breadcrumbs mainTitle="Image Upload" parent="Bouns Ui" title="Uploads" />
-            <Btn attrBtn={{ className: "mt-2 ml-50", type: "button", color: 'primary' }} >Upload Image</Btn>
+
             <Container fluid={true}>
                 <Row>
                     <Col sm="12">

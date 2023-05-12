@@ -15,14 +15,14 @@ export const WidgetsData2 = {
   icon: 'return-box',
 };
 export const WidgetsData3 = {
-  title: 'Дата последнего создания пользователя',
+  title: 'Последнее создание пользователя',
   gros: 70,
   total: '06.05.2023',
   color: 'primary',
   icon: 'tag',
 };
 export const WidgetsData4 = {
-  title: 'Дата последнего проведенного боя',
+  title: 'Последний проведенный бой',
   gros: 70,
   total: '05.05.2023',
   color: 'success',

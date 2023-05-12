@@ -15,7 +15,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
 
   const { t } = useTranslation();
   const toggletNavActive = (item) => {
-    console.log(8)
+
     if (window.innerWidth <= 991) {
       document.querySelector('.page-header').className = 'page-header close_icon';
       document.querySelector('.sidebar-wrapper').className = 'sidebar-wrapper close_icon ';
@@ -64,7 +64,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
               {menuItem.type === 'sub' ? (
                 <a
                   href='javascript'
-                  className={`sidebar-link sidebar-title ${CurrentPath.includes(menuItem.title.toLowerCase()) ? 'active' : ''} ${menuItem.active && 'active'}`}
+                  className={`sidebar-link sidebar-title ${CurrentPath.includes(menuItem?.pathName?.toLowerCase()) ? 'active' : ''} ${menuItem.active && 'active'}`}
                   onClick={(event) => {
                     event.preventDefault();
                     setNavActive(menuItem);
@@ -81,7 +81,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
               )}
 
               {menuItem.type === 'link' ? (
-                <Link to={menuItem.path + '/' + layoutId} className={`sidebar-link sidebar-title link-nav  ${CurrentPath.includes(menuItem.title.toLowerCase()) ? 'active' : ''}`} onClick={(e) => { toggletNavActive(menuItem) }}>
+                <Link to={menuItem.path + '/' + layoutId} className={`sidebar-link sidebar-title link-nav  ${CurrentPath.includes(menuItem?.pathName?.toLowerCase()) ? 'active' : ''}`} onClick={(e) => { console.log(12365); toggletNavActive(menuItem) }}>
                   <SvgIcon className='stroke-icon' iconId={`stroke-${menuItem.icon}`} />
                   <SvgIcon className='fill-icon' iconId={`fill-${menuItem.icon}`} />
                   <span>{t(menuItem.title)}</span>
@@ -92,14 +92,14 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
               )}
 
               {menuItem.children ? (
-                <ul className='sidebar-submenu' style={layout1 !== 'compact-sidebar compact-small' ? (menuItem?.active || CurrentPath.includes(menuItem?.title?.toLowerCase()) ? (sidebartoogle ? { opacity: 1, transition: 'opacity 500ms ease-in' } : { display: 'block' }) : { display: 'none' }) : { display: 'none' }}>
+                <ul className='sidebar-submenu' style={layout1 !== 'compact-sidebar compact-small' ? (menuItem?.active || CurrentPath.includes(menuItem?.pathName?.toLowerCase()) ? (sidebartoogle ? { opacity: 1, transition: 'opacity 500ms ease-in' } : { display: 'block' }) : { display: 'none' }) : { display: 'none' }}>
                   {menuItem.children.map((childrenItem, index) => {
                     return (
                       <li key={index}>
                         {childrenItem.type === 'sub' ? (
                           <a
                             href='javascript'
-                            className={`${CurrentPath.includes(childrenItem?.title?.toLowerCase()) ? 'active' : ''}`}
+                            className={`${CurrentPath.includes(childrenItem?.pathName?.toLowerCase()) ? 'active' : ''}`}
                             // className={`${childrenItem.active ? 'active' : ''}`}
                             onClick={(event) => {
                               event.preventDefault();
@@ -118,7 +118,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
                         {childrenItem.type === 'link' ? (
                           <Link
                             to={childrenItem.path + '/' + layoutId}
-                            className={`${CurrentPath.includes(childrenItem?.title?.toLowerCase()) ? 'active' : ''}`}
+                            className={`${CurrentPath.includes(childrenItem?.pathName?.toLowerCase()) ? 'active' : ''}`}
                             // className={`${childrenItem.active ? 'active' : ''}`} bonusui
                             onClick={(e) => { toggletNavActive(childrenItem) }}>
                             {t(childrenItem.title)}
@@ -128,13 +128,13 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
                         )}
 
                         {childrenItem.children ? (
-                          <ul className='nav-sub-childmenu submenu-content' style={CurrentPath.includes(childrenItem?.title?.toLowerCase()) || childrenItem.active ? { display: 'block' } : { display: 'none' }}>
+                          <ul className='nav-sub-childmenu submenu-content' style={CurrentPath.includes(childrenItem?.pathName?.toLowerCase()) || childrenItem.active ? { display: 'block' } : { display: 'none' }}>
                             {childrenItem.children.map((childrenSubItem, key) => (
                               <li key={key}>
                                 {childrenSubItem.type === 'link' ? (
                                   <Link
                                     to={childrenSubItem.path + '/' + layoutId}
-                                    className={`${CurrentPath.includes(childrenSubItem?.title?.toLowerCase()) ? 'active' : ''}`}
+                                    className={`${CurrentPath.includes(childrenSubItem?.pathName?.toLowerCase()) ? 'active' : ''}`}
                                     // className={`${childrenSubItem.active ? 'active' : ''}`}
                                     onClick={(e) => { e.preventDefault(); toggletNavActive(childrenSubItem) }}>
                                     {t(childrenSubItem.title)}

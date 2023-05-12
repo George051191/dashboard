@@ -494,6 +494,7 @@ legend+* {
 [type=search] {
     outline-offset: -2px;
     -webkit-appearance: textfield;
+    background-color: #7366ff;
 }
 
 
@@ -517,11 +518,13 @@ legend+* {
 ::-webkit-file-upload-button {
     font: inherit;
     -webkit-appearance: button;
+    background-color: #7366ff;
 }
 
 ::file-selector-button {
     font: inherit;
     -webkit-appearance: button;
+    background-color: #7366ff;
 }
 
 output {
@@ -2164,7 +2167,7 @@ progress {
     -webkit-margin-end: 0.75rem;
     margin-inline-end: 0.75rem;
     color: #212529;
-    background-color: #e9ecef;
+    background-color: #7366ff;
     pointer-events: none;
     border-color: inherit;
     border-style: solid;
@@ -2202,11 +2205,11 @@ progress {
 }
 
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-    background-color: #dde0e3;
+    background-color: #7366ff;
 }
 
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-    background-color: #dde0e3;
+    background-color: #7366ff;
 }
 
 .form-control-plaintext {
@@ -2243,6 +2246,7 @@ progress {
     margin: -0.25rem -0.5rem;
     -webkit-margin-end: 0.5rem;
     margin-inline-end: 0.5rem;
+    background-color: #7366ff;
 }
 
 .form-control-sm::file-selector-button {

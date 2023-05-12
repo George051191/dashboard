@@ -11,10 +11,11 @@ export const MENUITEMS = [
         badgetxt: '5',
         active: false,
         children: [
-          { path: `${process.env.PUBLIC_URL}/dashboard/default`, title: 'Default', type: 'link' },
-          { path: `${process.env.PUBLIC_URL}/dashboard/e-commerce`, title: 'E-commerce', type: 'link' },
-          { path: `${process.env.PUBLIC_URL}/dashboard/online-course`, title: 'Online Course', type: 'link' },
-          { path: `${process.env.PUBLIC_URL}/dashboard/crypto`, title: 'Crypto', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/dashboard/stata`, pathName: 'stata', title: 'Статистика', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/dashboard/settings`, pathName: 'settings', title: 'Настройки', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/dashboard/shop`, pathName: 'shop', title: 'Магазин', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/dashboard/create`, pathName: 'create', title: 'Генерация', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/dashboard/pokemons`, pathName: 'pokemons', title: 'Покемоны', type: 'link' },
 
         ],
       },

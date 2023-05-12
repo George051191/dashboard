@@ -517,11 +517,13 @@ legend+* {
 ::-webkit-file-upload-button {
     font: inherit;
     -webkit-appearance: button;
+    background-color: #7366ff;
 }
 
 ::file-selector-button {
     font: inherit;
     -webkit-appearance: button;
+    background-color: #7366ff;
 }
 
 output {
@@ -2164,7 +2166,7 @@ progress {
     -webkit-margin-end: 0.75rem;
     margin-inline-end: 0.75rem;
     color: #212529;
-    background-color: #e9ecef;
+    background-color: #7366ff;
     pointer-events: none;
     border-color: inherit;
     border-style: solid;
@@ -2195,18 +2197,20 @@ progress {
     .form-control::-webkit-file-upload-button {
         -webkit-transition: none;
         transition: none;
+        background-color: #7366ff;
     }
     .form-control::file-selector-button {
         transition: none;
+        background-color: #7366ff;
     }
 }
 
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-    background-color: #dde0e3;
+    background-color: #7366ff;
 }
 
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-    background-color: #dde0e3;
+    background-color: #7366ff;
 }
 
 .form-control-plaintext {
@@ -2243,6 +2247,7 @@ progress {
     margin: -0.25rem -0.5rem;
     -webkit-margin-end: 0.5rem;
     margin-inline-end: 0.5rem;
+    background-color: #7366ff;
 }
 
 .form-control-sm::file-selector-button {
@@ -2264,6 +2269,7 @@ progress {
     margin: -0.5rem -1rem;
     -webkit-margin-end: 1rem;
     margin-inline-end: 1rem;
+    background-color: #7366ff;
 }
 
 .form-control-lg::file-selector-button {
@@ -89400,3 +89406,15 @@ rect {
 
 
 /*# sourceMappingURL=index.css.map */
+
+::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: button;
+    background-color: #7366ff;
+}
+
+::file-selector-button {
+    font: inherit;
+    -webkit-appearance: button;
+    background-color: #7366ff;
+}

@@ -1642,20 +1642,22 @@ span.twitter-typeahead {
     display: flex;
     gap: 15px;
     position: absolute;
-    top: -50px;
+    top: -99px;
     right: 2%;
     [dir='rtl'] & {
         right: unset;
         left: 2%;
     }
     @media (max-width: 991px) {
-        top: -42px;
+        top: -88px;
         [dir='rtl'] & {
             left: -65%;
         }
     }
     @media (max-width: 575px) {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        ;
     }
     li {
         display: flex;

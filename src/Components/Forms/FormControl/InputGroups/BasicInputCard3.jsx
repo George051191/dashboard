@@ -1,31 +1,30 @@
 import React, { Fragment } from 'react';
-import { Form, Row, Col, Card, CardBody, FormGroup, Label, Input } from 'reactstrap';
+import { Form, Row, Col, Card, Label } from 'reactstrap';
 import { Btn } from '../../../../AbstractElements';
-import HeaderCard from '../../../Common/Component/HeaderCard';
-import FooterCard from '../Common/FooterCard';
+
 import { toast } from 'react-toastify';
 import JavascriptMode1 from '../../../Editor/AceCodeEditor/JavascriptMode1'
 const BasicInputCard1 = () => {
     return (
-        <Fragment>
-            <Card style={{ display: 'flex', flexDirection: 'row' }} className='row'>
-                <Col className='col-6'  >
+        <Fragment >
+            <Card style={{ display: 'flex', flexDirection: 'row', marginLeft: '-2px', marginRight: '-2px' }} className='row p-t-20'>
+                <Col className='col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-6'  >
 
-                    <div class="container m-0">
-                        <div class="row">
-                            <div class="col-sm  " style={{ width: '260px' }}>
-                                <Label>{'Колличество тренеров'}</Label>
-                                <input type="number" class="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
+                    <div className="container m-0">
+                        <div className="row align-items-end m-b-20">
+                            <div className="col-sm-4 m-b-10  " >
+                                <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество тренеров'}</Label>
+                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
                             </div>
-                            <div class="col-sm" style={{ width: '260px' }}>
-                                <Label>{'Колличество покемонов'}</Label>
-                                <input type="number" class="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
+                            <div className="col-sm-4  m-b-10" >
+                                <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество покемонов'}</Label>
+                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
                             </div>
-                            <div class="col-sm m-t-25  " style={{ width: '260px' }}>
-                                <Form className='w-100 p-b-10 '>
+                            <div className="col-sm-4  m-b-10  " style={{ height: '38px' }}>
+                                <Form className='w-100 '>
 
 
-                                    <Btn attrBtn={{ size: 25, color: "primary", className: "input-group-text w-50", type: "button", onClick: () => toast.success('Генерация...') }} >{'Генерация'}</Btn>
+                                    <Btn attrBtn={{ size: '25', color: "primary", className: "input-group-text w-100", type: "button", onClick: () => toast.success('Генерация...') }} >{'Генерация'}</Btn>
                                 </Form>
 
                             </div>
@@ -36,23 +35,23 @@ const BasicInputCard1 = () => {
                     </div>
                     <JavascriptMode1 title='Лог-генерация' />
                 </Col>
-                <Col className='col-6'>
+                <Col className='col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-6'  >
 
-                    <div class="container m-0" style={{ width: '300px' }}>
-                        <div class="row">
-                            <div class="col-sm  " style={{ width: '260px' }}>
-                                <Label>{'Колличество тренеров'}</Label>
-                                <input type="number" class="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
+                    <div className="container m-0">
+                        <div className="row align-items-end m-b-20">
+                            <div className="col-sm-4  m-b-10 " >
+                                <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество покемонов'}</Label>
+                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
                             </div>
-                            <div class="col-sm" style={{ width: '260px' }}>
-                                <Label>{'Колличество покемонов'}</Label>
-                                <input type="number" class="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
+                            <div className="col-sm-4  m-b-10" >
+                                <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество выживших'}</Label>
+                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
                             </div>
-                            <div class="col-sm m-t-25  " style={{ width: '260px' }}>
-                                <Form className='w-100 p-b-10 '>
+                            <div className="col-sm-4  m-b-10  " style={{ height: '38px' }}>
+                                <Form className='w-100 '>
 
 
-                                    <Btn attrBtn={{ size: 25, color: "primary", className: "input-group-text w-50", type: "button", onClick: () => toast.success('Генерация...') }} >{'Генерация'}</Btn>
+                                    <Btn attrBtn={{ size: '25', color: "primary", className: "input-group-text w-100", type: "button", onClick: () => toast.success('Генерация...') }} >{'Генерация'}</Btn>
                                 </Form>
 
                             </div>
@@ -61,7 +60,7 @@ const BasicInputCard1 = () => {
 
 
                     </div>
-                    <JavascriptMode1 title='Лог-генерация' />
+                    <JavascriptMode1 title={'Генерация/Бои'} />
                 </Col>
             </Card>
         </Fragment>

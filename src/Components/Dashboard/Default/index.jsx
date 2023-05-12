@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   return (
     <Fragment>
-      <Breadcrumbs mainTitle='Default' parent='Dashboard' title='Default' />
+      <Breadcrumbs mainTitle='Статистика' parent='Dashboard' title='Статистика' />
       <Container fluid={true}>
         <Row className='widget-grid'>
 

@@ -1,22 +1,22 @@
 import React, { Fragment } from 'react';
 import { Row, Card, CardBody, Form, FormGroup, Label, Input } from 'reactstrap';
-import FooterCard1 from '../Common/FooterCard1';
+
 import JavascriptMode from '../../../Editor/AceCodeEditor/JavascriptMode';
 
 import CommonModal from './CommonModal';
 import { Btn } from '../../../../AbstractElements';
-import { toast } from 'react-toastify';
+
 const BasicFormControlClass = () => {
     const [modal, setModal] = React.useState(false);
     const toggle = (e) => { e.stopPropagation(); setModal(!modal) }
     return (
         <Fragment>
-            <CommonModal isOpen={modal} title={'Подтвердить действие'} toggler={toggle} size='sm' >....</CommonModal>
+            <CommonModal adv='Идет генерация' buttonName='Выполнить' isOpen={modal} title={'Подтвердить действие'} toggler={toggle} size='sm' >....</CommonModal>
             <Form className="col">
                 <Card className='p-20'>
                     <CardBody>
                         <Row>
-                            <div class="col-xs-12 col-md-6 col-xl-4">
+                            <div className="col-xs-12 col-md-6 col-xl-4">
                                 <FormGroup className="col "  >
                                     <Label htmlFor="exampleFormControlInput1">{'Ссылка на правила игры'}</Label>
                                     <Input className="form-control" type="text" placeholder="https://..." />
@@ -34,20 +34,20 @@ const BasicFormControlClass = () => {
                                     <Label>{'Время обновления логов Loguru'}</Label>
                                     <Input type="number" className="form-control" placeholder="3" />
                                 </FormGroup>
-                                <FormGroup className="col  ">
+                                <FormGroup className="col d-xl-none  ">
                                     <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
                                     <Input className="form-control" type="number" placeholder="14" />
                                 </FormGroup>
                                 <FormGroup className="col d-xl-none" >
                                     <Label >{'Ключ авторизации'}</Label>
-                                    <div class="input-group mb-3">
+                                    <div className="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
                                         <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
                                     </div>
                                 </FormGroup>
                             </div>
 
-                            <div class="col-xs-12 col-md-6 col-xl-4">
+                            <div className="col-xs-12 col-md-6 col-xl-4">
 
                                 <FormGroup className="col " >
                                     <Label htmlFor="exampleFormControlInput1">{'SMTP логин'}</Label>
@@ -71,15 +71,15 @@ const BasicFormControlClass = () => {
                                 </FormGroup>
                                 <FormGroup className="col d-xl-none " >
                                     <Label >{'Ключ телеграмм-приложения'}</Label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                    <div className="input-group mb-3">
+                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
                                         <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
                                     </div>
                                 </FormGroup>
                                 <FormGroup className="col d-xl-none " >
                                     <Label >{'Мастер-ключ'}</Label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                    <div className="input-group mb-3">
+                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
                                         <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
                                     </div>
                                 </FormGroup>
@@ -91,24 +91,28 @@ const BasicFormControlClass = () => {
 
                                 <FormGroup className="col " >
                                     <Label >{'Ключ авторизации'}</Label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                    <div className="input-group mb-3">
+                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
                                         <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
                                     </div>
                                 </FormGroup>
                                 <FormGroup className="col " >
                                     <Label >{'Ключ телеграмм-приложения'}</Label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                    <div className="input-group mb-3">
+                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
                                         <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
                                     </div>
                                 </FormGroup>
                                 <FormGroup className="col " >
                                     <Label >{'Мастер-ключ'}</Label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                    <div className="input-group mb-3">
+                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
                                         <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
                                     </div>
+                                </FormGroup>
+                                <FormGroup className="col  ">
+                                    <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
+                                    <Input className="form-control" type="number" placeholder="14" />
                                 </FormGroup>
                             </div>
                         </Row>
