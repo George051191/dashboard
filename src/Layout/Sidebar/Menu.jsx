@@ -15,6 +15,7 @@ export const MENUITEMS = [
           {
             path: `${process.env.PUBLIC_URL}/dashboard/settings`, pathName: 'settings', title: 'Настройки', type: 'link',
           },
+          { path: `${process.env.PUBLIC_URL}/dashboard/keys`, pathName: 'keys', title: 'Ключи', type: 'link' },
           { path: `${process.env.PUBLIC_URL}/dashboard/shop`, pathName: 'shop', title: 'Магазин', type: 'link' },
           { path: `${process.env.PUBLIC_URL}/dashboard/create`, pathName: 'create', title: 'Генерация', type: 'link' },
           { path: `${process.env.PUBLIC_URL}/dashboard/pokemons`, pathName: 'pokemons', title: 'Покемоны', type: 'link' },
@@ -25,3 +26,4 @@ export const MENUITEMS = [
 
     ]
   }]
+

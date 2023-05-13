@@ -14,7 +14,7 @@ export const routes = [
   { path: `${process.env.PUBLIC_URL}/dashboard/shop/:layout`, Component: <OnlineCourse /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/create/:layout`, Component: <Crypto /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/pokemons/:layout`, Component: <OnlineCourse1 /> },
-
+  { path: `${process.env.PUBLIC_URL}/dashboard/keys/:layout`, Component: <Ecommerce1 /> },
 
 ]
 

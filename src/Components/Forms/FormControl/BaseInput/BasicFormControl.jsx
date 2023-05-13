@@ -43,11 +43,11 @@ const BasicFormControlClass = () => {
                                     <Label>{'Время обновления логов Loguru'}</Label>
                                     <Input onChange={validateValue} type="tel" className="form-control" placeholder="3" />
                                 </FormGroup>
-                                <FormGroup className="col d-xl-none  ">
+                                <FormGroup className="col  ">
                                     <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
                                     <Input onChange={validateValue} type="tel" className="form-control" placeholder="14" />
                                 </FormGroup>
-                                <FormGroup className="col  d-xl-none position-relative " >
+                                {/*     <FormGroup className="col  d-xl-none position-relative " >
                                     <Label >{'Ключ авторизации'}</Label>
                                     <div className="input-group mb-3 position-relative">
                                         <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
@@ -57,8 +57,8 @@ const BasicFormControlClass = () => {
                                         <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'primary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="icon-key"></i></Btn>
 
                                     </div>
-                                </FormGroup>
-                                <FormGroup className="col position-relative " >
+                                </FormGroup> */}
+                                {/*      <FormGroup className="col position-relative " >
                                     <Label >{'Максимум боёв'}</Label>
                                     <div className="input-group mb-3 position-relative">
                                         <input onChange={validateValue} type="tel" className="form-control p-t-9" placeholder="50" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
@@ -66,7 +66,7 @@ const BasicFormControlClass = () => {
                                         <Basic />
 
                                     </div>
-                                </FormGroup>
+                                </FormGroup> */}
                             </div>
 
                             <div className="col-xs-12 col-md-6 col-xl-4">
@@ -96,7 +96,7 @@ const BasicFormControlClass = () => {
                                     <Label>{'Версия приложения'}</Label>
                                     <Input onChange={validateValue} type="tel" className="form-control" placeholder="2.13" />
                                 </FormGroup>
-                                <FormGroup className="col  d-xl-none position-relative " >
+                                {/*      <FormGroup className="col  d-xl-none position-relative " >
                                     <Label >{'Ключ телеграмм-приложения'}</Label>
                                     <div className="input-group mb-3 position-relative">
                                         <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
@@ -106,16 +106,19 @@ const BasicFormControlClass = () => {
                                         <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'secondary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="fa fa-floppy-o"></i></Btn>
 
                                     </div>
+                                </FormGroup> */}
+                                <FormGroup className="col  ">
+                                    <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
+                                    <Input className="form-control" onChange={validateValue} type="tel" placeholder="14" />
                                 </FormGroup>
-
 
                             </div>
 
-                            <div className='col-xs-12 col-md-6 col-xl-4 d-none d-xl-block'>
 
 
 
-                                <FormGroup className="col position-relative " >
+
+                            {/*         <FormGroup className="col position-relative " >
                                     <Label >{'Ключ авторизации'}</Label>
                                     <div className="input-group mb-3 position-relative">
                                         <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
@@ -125,9 +128,9 @@ const BasicFormControlClass = () => {
                                         <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'primary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="icon-key"></i></Btn>
 
                                     </div>
-                                </FormGroup>
+                                </FormGroup> */}
 
-                                <FormGroup className="col position-relative " >
+                            {/*     <FormGroup className="col position-relative " >
                                     <Label >{'Ключ телеграмм-приложения'}</Label>
                                     <div className="input-group mb-3 position-relative">
                                         <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
@@ -137,15 +140,12 @@ const BasicFormControlClass = () => {
                                         <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'secondary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="fa fa-floppy-o"></i></Btn>
 
                                     </div>
-                                </FormGroup>
-
-                                <FormGroup className="col  ">
-                                    <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
-                                    <Input className="form-control" onChange={validateValue} type="tel" placeholder="14" />
-                                </FormGroup>
+                                </FormGroup> */}
 
 
-                            </div>
+
+
+
                         </Row>
                         <Row>
                             <JavascriptMode title='Лог генерации покемонов' />
