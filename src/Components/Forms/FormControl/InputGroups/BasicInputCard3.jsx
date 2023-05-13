@@ -5,6 +5,13 @@ import { Btn } from '../../../../AbstractElements';
 import { toast } from 'react-toastify';
 import JavascriptMode1 from '../../../Editor/AceCodeEditor/JavascriptMode1'
 const BasicInputCard1 = () => {
+    const validateValue = (e) => {
+
+        if (e.target.value.includes('-') || e.target.value.includes('+')) {
+            e.target.value = ''
+            return
+        }
+    }
     return (
         <Fragment >
             <Card style={{ display: 'flex', flexDirection: 'row', marginLeft: '-2px', marginRight: '-2px' }} className='row p-t-20'>
@@ -14,11 +21,11 @@ const BasicInputCard1 = () => {
                         <div className="row align-items-end m-b-20">
                             <div className="col-sm-4 m-b-10  " >
                                 <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество тренеров'}</Label>
-                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
+                                <input onChange={validateValue} type="tel" className="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
                             </div>
                             <div className="col-sm-4  m-b-10" >
                                 <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество покемонов'}</Label>
-                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
+                                <input onChange={validateValue} type="tel" className="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
                             </div>
                             <div className="col-sm-4  m-b-10  " style={{ height: '38px' }}>
                                 <Form className='w-100 '>
@@ -41,11 +48,11 @@ const BasicInputCard1 = () => {
                         <div className="row align-items-end m-b-20">
                             <div className="col-sm-4  m-b-10 " >
                                 <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество покемонов'}</Label>
-                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
+                                <input onChange={validateValue} type="tel" className="form-control w-100" placeholder="20" aria-label="Тренеры" aria-describedby="basic-addon2" />
                             </div>
                             <div className="col-sm-4  m-b-10" >
                                 <Label style={{ fontSize: '13px', whiteSpace: 'nowrap' }}>{'Колличество выживших'}</Label>
-                                <input type="number" className="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
+                                <input onChange={validateValue} type="tel" className="form-control w-100" placeholder="20" aria-label="Покемоны" aria-describedby="basic-addon2" />
                             </div>
                             <div className="col-sm-4  m-b-10  " style={{ height: '38px' }}>
                                 <Form className='w-100 '>

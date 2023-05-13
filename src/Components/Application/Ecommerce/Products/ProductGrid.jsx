@@ -1,24 +1,28 @@
 
 import React, { Fragment, useState } from 'react';
-
-import { Label, Form, Input, CardBody } from "reactstrap";
+import { Card, CardBody, Label, CardHeader, Col, Container, Row } from "reactstrap";
 import { Btn } from '../../../../AbstractElements';
-import Files from 'react-files';
+import trainer1 from '../../../../assets/images/trainer-2.svg';
+import trainer2 from '../../../../assets/images/trainer-3.svg';
+import trainer3 from '../../../../assets/images/trainer-4.svg';
+import trainer4 from '../../../../assets/images/trainer-1.svg';
+/* import trainer5 from '../../../../assets/images/trainer-7.svg;' */
 import ListOfImageDesc from '../../../Gallery/ImageGallery/ListOfImgDesc';
 import { toast } from 'react-toastify';
+import Files from 'react-files';
+import GalleryContext from '../../../../_helper/Gallery';
+
 
 
 const ProductGrid = ({ title, isNeed }) => {
   //for real data
-  /*   const [smallImages, setSmallImages] = useContext(GalleryContext) */
+  const { smallImages, setSmallImages, pokemonImages, setPokemonImages } = React.useContext(GalleryContext)
 
   const [name, setName] = useState('')
   const [cost, setCost] = useState()
-  const [smallImages, setImages] = useState([])
+
   const [files, setFile] = useState();
-  const onFilesChange = (files) => {
-    setFile(files)
-  }
+
   const readUrl = () => {
     if (!files) return;
     var mimeType = files.type;
@@ -30,38 +34,45 @@ const ProductGrid = ({ title, isNeed }) => {
       let uniqId = Math.floor(Math.random() * 100) + Math.floor(Math.random());
 
 
-      setImages([...smallImages, { id: uniqId, image: reader.result, name: name, cost: cost }]);
+      setSmallImages([...smallImages, { id: uniqId, image: reader.result, name: name, cost: cost }]);
       toast.success('Загрузка...')
     };
   }
   const deleteCard = (itemid) => {
+    if (window.location.pathname.includes('pokemons')) {
+      const filteredArray = pokemonImages.filter((el) => {
 
+        return el.id !== itemid
+      })
+      setPokemonImages(filteredArray)
+      return
+    }
     const filteredArray = smallImages.filter((el) => {
 
       return el.id !== itemid
     })
-    /*  setSmallImages(filteredArray) */
-    console.log(filteredArray)
-    setImages(filteredArray)
+    setSmallImages(filteredArray)
+
+
   }
 
-  React.useEffect(() => {
-    readUrl()
-    console.log(files)
-  }, [files])
+  /*  React.useEffect(() => {
+     readUrl()
+ 
+   }, [files]) */
   return (
     <Fragment>
       <div className="container-xl w-100 m-l-0 m-r-0">
         <div className="row w-100 display-custom-user">
-          {isNeed && <div className="col-6">
+          {/*    {isNeed && <div className="col-6">
             <Label>{title}</Label>
             <input onChange={((e) => setName(e.target.value))} type="number" className="form-control w-100" placeholder="1500" aria-label="Имя тренера" aria-describedby="basic-addon2" />
           </div>}
-
-          <div className="col-4 ">
+ */}
+          {/*  <div className="col-4 ">
             <CardBody className='fileUploader'>
 
-              {/*  <Input style={{}} id='upfile' multiple type='file' onChange={(e) => readUrl(e)} /> */}
+
               <Files
                 className='files-dropzone fileContainer'
                 onChange={onFilesChange}
@@ -76,7 +87,7 @@ const ProductGrid = ({ title, isNeed }) => {
               </Files>
 
             </CardBody>
-          </div>
+          </div> */}
         </div>
       </div>
       <ListOfImageDesc callBack={deleteCard} name={name} cost={cost} smallImages={smallImages} withDesc={true} />

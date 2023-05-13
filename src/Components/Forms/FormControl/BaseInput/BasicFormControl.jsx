@@ -5,10 +5,19 @@ import JavascriptMode from '../../../Editor/AceCodeEditor/JavascriptMode';
 
 import CommonModal from './CommonModal';
 import { Btn } from '../../../../AbstractElements';
+import Basic from '../../../../CommonElements/DropDown';
 
 const BasicFormControlClass = () => {
     const [modal, setModal] = React.useState(false);
+    const [togglePassword, setTogglePassword] = React.useState(false);
     const toggle = (e) => { e.stopPropagation(); setModal(!modal) }
+    const validateValue = (e) => {
+
+        if (e.target.value.includes('-') || e.target.value.includes('+')) {
+            e.target.value = ''
+            return
+        }
+    }
     return (
         <Fragment>
             <CommonModal adv='Идет генерация' buttonName='Выполнить' isOpen={modal} title={'Подтвердить действие'} toggler={toggle} size='sm' >....</CommonModal>
@@ -32,17 +41,30 @@ const BasicFormControlClass = () => {
 
                                 <FormGroup className="col " >
                                     <Label>{'Время обновления логов Loguru'}</Label>
-                                    <Input type="number" className="form-control" placeholder="3" />
+                                    <Input onChange={validateValue} type="tel" className="form-control" placeholder="3" />
                                 </FormGroup>
                                 <FormGroup className="col d-xl-none  ">
                                     <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
-                                    <Input className="form-control" type="number" placeholder="14" />
+                                    <Input onChange={validateValue} type="tel" className="form-control" placeholder="14" />
                                 </FormGroup>
-                                <FormGroup className="col d-xl-none" >
+                                <FormGroup className="col  d-xl-none position-relative " >
                                     <Label >{'Ключ авторизации'}</Label>
-                                    <div className="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
-                                        <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
+                                    <div className="input-group mb-3 position-relative">
+                                        <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                        <div style={{ top: '18px', right: '83px' }} className='show-hide' onClick={() => setTogglePassword(!togglePassword)}>
+                                            <i className={togglePassword ? 'icon-unlock' : 'icon-lock'}></i>
+                                        </div>
+                                        <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'primary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="icon-key"></i></Btn>
+
+                                    </div>
+                                </FormGroup>
+                                <FormGroup className="col position-relative " >
+                                    <Label >{'Максимум боёв'}</Label>
+                                    <div className="input-group mb-3 position-relative">
+                                        <input onChange={validateValue} type="tel" className="form-control p-t-9" placeholder="50" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+
+                                        <Basic />
+
                                     </div>
                                 </FormGroup>
                             </div>
@@ -53,11 +75,16 @@ const BasicFormControlClass = () => {
                                     <Label htmlFor="exampleFormControlInput1">{'SMTP логин'}</Label>
                                     <Input className="form-control" type="text" placeholder="example@login" />
                                 </FormGroup>
-                                <FormGroup className="col " >
+
+                                <FormGroup className="col   position-relative " >
                                     <Label >{'SMTP пароль'}</Label>
+                                    <div className="input-group mb-3 position-relative">
+                                        <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                        <div style={{ top: '18px', right: '20px' }} className='show-hide' onClick={() => setTogglePassword(!togglePassword)}>
+                                            <i className={togglePassword ? 'icon-unlock' : 'icon-lock'}></i>
+                                        </div>
 
-                                    <Input className="form-control" type="password" placeholder="****" />
-
+                                    </div>
                                 </FormGroup>
                                 <FormGroup className="col ">
                                     <Label htmlFor="exampleFormControlInput1">{'SMTP домен'}</Label>
@@ -67,58 +94,62 @@ const BasicFormControlClass = () => {
                                 {/* invis */}
                                 <FormGroup className="	  col " >
                                     <Label>{'Версия приложения'}</Label>
-                                    <Input type="number" className="form-control" placeholder="2.13" />
+                                    <Input onChange={validateValue} type="tel" className="form-control" placeholder="2.13" />
                                 </FormGroup>
-                                <FormGroup className="col d-xl-none " >
+                                <FormGroup className="col  d-xl-none position-relative " >
                                     <Label >{'Ключ телеграмм-приложения'}</Label>
-                                    <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
-                                        <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
+                                    <div className="input-group mb-3 position-relative">
+                                        <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                        <div style={{ top: '18px', right: '83px' }} className='show-hide' onClick={() => setTogglePassword(!togglePassword)}>
+                                            <i className={togglePassword ? 'icon-unlock' : 'icon-lock'}></i>
+                                        </div>
+                                        <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'secondary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="fa fa-floppy-o"></i></Btn>
+
                                     </div>
                                 </FormGroup>
-                                <FormGroup className="col d-xl-none " >
-                                    <Label >{'Мастер-ключ'}</Label>
-                                    <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
-                                        <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
-                                    </div>
-                                </FormGroup>
+
 
                             </div>
 
                             <div className='col-xs-12 col-md-6 col-xl-4 d-none d-xl-block'>
 
 
-                                <FormGroup className="col " >
+
+                                <FormGroup className="col position-relative " >
                                     <Label >{'Ключ авторизации'}</Label>
-                                    <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
-                                        <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
+                                    <div className="input-group mb-3 position-relative">
+                                        <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                        <div style={{ top: '18px', right: '83px' }} className='show-hide' onClick={() => setTogglePassword(!togglePassword)}>
+                                            <i className={togglePassword ? 'icon-unlock' : 'icon-lock'}></i>
+                                        </div>
+                                        <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'primary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="icon-key"></i></Btn>
+
                                     </div>
                                 </FormGroup>
-                                <FormGroup className="col " >
+
+                                <FormGroup className="col position-relative " >
                                     <Label >{'Ключ телеграмм-приложения'}</Label>
-                                    <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
-                                        <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
+                                    <div className="input-group mb-3 position-relative">
+                                        <input type={togglePassword ? 'text' : 'password'} name='login[password]' className="form-control p-t-9" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
+                                        <div style={{ top: '18px', right: '83px' }} className='show-hide' onClick={() => setTogglePassword(!togglePassword)}>
+                                            <i className={togglePassword ? 'icon-unlock' : 'icon-lock'}></i>
+                                        </div>
+                                        <Btn style={{ height: '38px' }} attrBtn={{ height: '38px', color: 'secondary', size: 'sm', onClick: (e) => toggle(e) }} ><i className="fa fa-floppy-o"></i></Btn>
+
                                     </div>
                                 </FormGroup>
-                                <FormGroup className="col " >
-                                    <Label >{'Мастер-ключ'}</Label>
-                                    <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="*****" aria-label="Имя пользователя получателя" aria-describedby="basic-addon2" />
-                                        <Btn attrBtn={{ size: '38px', color: "primary", className: "input-group-text w-25 p-0", type: "button", onClick: (e) => toggle(e) }} >{'Создать'}</Btn>
-                                    </div>
-                                </FormGroup>
+
                                 <FormGroup className="col  ">
                                     <Label htmlFor="exampleFormControlInput1">{'Макс.количество запросов в секунду'}</Label>
-                                    <Input className="form-control" type="number" placeholder="14" />
+                                    <Input className="form-control" onChange={validateValue} type="tel" placeholder="14" />
                                 </FormGroup>
+
+
                             </div>
                         </Row>
                         <Row>
-                            <JavascriptMode title='Код json ключа Google WEB приложения' />
-                            <JavascriptMode title='Код js/метрика и прочее' />
+                            <JavascriptMode title='Лог генерации покемонов' />
+                            <JavascriptMode title='Лог генерации боёв' />
                         </Row>
                     </CardBody>
                 </Card>

@@ -1,16 +1,24 @@
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownMenu } from 'reactstrap';
-import Btn from '../Button';
+import { Card, CardBody, Col, Dropdown, DropdownItem, DropdownMenu } from 'reactstrap';
+import { Btn } from '../../AbstractElements'
 
-const Dropdowns = (props) =>(
-  <Dropdown {...props.attrDropDown}>
-    <Btn attrBtn={props.attrDropBtn} ><div dangerouslySetInnerHTML={{ __html:props.dropBtnContent }} /></Btn>
-    <DropdownMenu {...props.attrDropMenu}>
-      {props.dropItem.map((item,i) => 
-        <DropdownItem {...props.attrDropItem} key={i}>{item.item}</DropdownItem>
-      )}
-    </DropdownMenu>
-  </Dropdown>
-);
 
-export default Dropdowns;
+
+const Basic = () => {
+  return (
+
+    <div className="dropdown-basic w-54">
+      <Dropdown className="dropdown">
+        <Btn style={{ padding: '9px 15px' }} attrBtn={{ color: 'primary', className: 'dropbtn p-t-9 p-b-9  p-r-15 p-l-15' }} >{'Выбрать'} <span><i className="icofont icofont-arrow-down"></i></span></Btn>
+        <DropdownMenu className="dropdown-content">
+          <DropdownItem disabled={true} href="#">{'За день'}</DropdownItem>
+          <DropdownItem disabled={true} href="#">{'За час'}</DropdownItem>
+
+        </DropdownMenu>
+      </Dropdown>
+    </div>
+
+  );
+};
+
+export default Basic;

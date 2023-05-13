@@ -5,6 +5,7 @@ import Default from '../Components/Dashboard/Default';
 import Ecommerce from '../Components/Dashboard/Ecommerce';
 import OnlineCourse from '../Components/Dashboard/OnlineCourse';
 import OnlineCourse1 from '../Components/Dashboard/OnlineCourse/OnlineCourse1';
+import Ecommerce1 from '../Data/Ecommerce/Ecommerce1';
 
 export const routes = [
   //dashboard
@@ -14,4 +15,7 @@ export const routes = [
   { path: `${process.env.PUBLIC_URL}/dashboard/create/:layout`, Component: <Crypto /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/pokemons/:layout`, Component: <OnlineCourse1 /> },
 
+
 ]
+
+

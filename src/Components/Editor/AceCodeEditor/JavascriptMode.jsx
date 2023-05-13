@@ -14,7 +14,7 @@ const JavascriptMode = ({ title }) => {
                 <Card className='shadow-none'>
                     <Label>{title}</Label>
 
-                    <CardBody className='p-l-0' style={{ paddingLeft: '0' }}>
+                    <CardBody className='p-l-0 p-t-0' style={{ paddingLeft: '0' }}>
                         <AceEditor
                             style={{ marginTop: '0px', width: '663px', height: '428px', marginLeft: '0px' }}
                             mode="javascript"
